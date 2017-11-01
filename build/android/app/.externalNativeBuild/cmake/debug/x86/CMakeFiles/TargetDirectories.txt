@@ -1,0 +1,4 @@
+C:/Users/JoelKan/Desktop/xplatform_template/build/android/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/app-glue.dir
+C:/Users/JoelKan/Desktop/xplatform_template/build/android/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/native-activity.dir
+C:/Users/JoelKan/Desktop/xplatform_template/build/android/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/edit_cache.dir
+C:/Users/JoelKan/Desktop/xplatform_template/build/android/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/rebuild_cache.dir

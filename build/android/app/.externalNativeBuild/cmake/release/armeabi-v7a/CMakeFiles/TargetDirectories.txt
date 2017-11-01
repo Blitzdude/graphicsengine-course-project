@@ -1,0 +1,4 @@
+C:/Users/JoelKan/Desktop/xplatform_template/build/android/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/app-glue.dir
+C:/Users/JoelKan/Desktop/xplatform_template/build/android/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/native-activity.dir
+C:/Users/JoelKan/Desktop/xplatform_template/build/android/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/JoelKan/Desktop/xplatform_template/build/android/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir
