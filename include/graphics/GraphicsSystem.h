@@ -10,6 +10,8 @@
 #include <core/Object.h>
 #include <stdint.h>
 #include <string>
+#include <fstream>
+#include <GLES2\gl2.h>
 
 namespace engine
 {
@@ -25,6 +27,15 @@ namespace engine
 
 		// Method for swapping backbuffer to screen.
 		virtual void swapBuffers() = 0;
+
+		// Method for creating and linking shader prorgrams
+		virtual GLuint CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath) = 0;
+
+		virtual void use(GLuint programID) = 0;
+		
+		virtual void unUse() = 0;
+
+		
 	};
 
 }

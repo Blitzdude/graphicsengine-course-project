@@ -1,11 +1,7 @@
-﻿  Window.cpp
-  Win32Window.cpp
-  OGLGraphicsSystem.cpp
-  OGL.cpp
-  Object.cpp
-  GraphicsSystem.cpp
-  ElapsedTimer.cpp
-  GraphicsApplication.cpp
-  AndroidWindow.cpp
+﻿  GraphicsApplication.cpp
   Generating Code...
-  engine.vcxproj -> C:\Users\JoelKan\Desktop\xplatform_template\build\win32\Debug\engine.lib
+  Compiling...
+  OGLGraphicsSystem.cpp
+  GraphicsSystem.cpp
+  Generating Code...
+  engine.vcxproj -> C:\Users\joelkan\Desktop\graphicsengine-course-project\build\win32\Debug\engine.lib

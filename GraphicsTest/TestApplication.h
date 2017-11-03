@@ -9,11 +9,13 @@
 
 #include <graphics/GraphicsApplication.h>
 #include <core/Log.h>
+#include "graphics/esUtil.h"
 
 namespace engine
 {
 	class Window;
 	class GraphicsSystem;
+	
 	
 	class TestApplication :
 		public GraphicsApplication
@@ -23,9 +25,6 @@ namespace engine
 
 		~TestApplication();
 
-		void init();
-
-
 		/// Updates application. Returns true, if application is running.
 		virtual bool update(float deltaTime);
 		
@@ -34,8 +33,9 @@ namespace engine
 
 	private:
 		float						m_totalTime;
-
-		
+		ESContext					m_esContext;
+		GLuint						m_programId;
+		GLuint						m_blueProgramId;
 	};
 
 }

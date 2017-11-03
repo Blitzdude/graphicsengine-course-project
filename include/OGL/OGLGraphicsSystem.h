@@ -10,6 +10,7 @@
 #include <graphics/GraphicsSystem.h>
 #include <core/Ref.h>
 #include <EGL/egl.h>
+#include "graphics/esUtil.h"
 
 namespace engine
 {
@@ -28,6 +29,21 @@ namespace engine
 		virtual void clearScreen(float red, float green, float blue, bool setViewport);
 
 		virtual void swapBuffers();
+	
+		// Method for creating and linking shader prorgrams
+		virtual GLuint CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath);
+
+		virtual void readFileToBuffer(std::string filePath, std::string& buffer);
+
+		virtual void compileShadersFromSource(const char* vertexSource, const char* fragmentSource);
+
+		virtual void compileShader(const char* source, const std::string& name, GLuint id);
+
+		virtual void linkShaders();
+
+		virtual void use(GLuint programID);
+
+		virtual void unUse();
 
 	private:
 		engine::Ref<Window> m_window;	// Window where graphics is binded
@@ -37,6 +53,11 @@ namespace engine
 		EGLDisplay m_eglDisplay; // Display object
 		EGLContext m_eglContext; // Context object
 		EGLSurface m_eglSurface; // Surface object
+
+		// opengle ids
+		GLuint m_programID;
+		GLuint m_vertexShaderID;
+		GLuint m_fragmentShaderID;
 	};
 
 }

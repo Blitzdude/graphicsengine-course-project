@@ -23,6 +23,7 @@ int main(int argc, char* argv[]) {
 	engine::Ref<engine::Win32Window> window = new engine::Win32Window( w, h, L"Engine test application" );
 
 	engine::Ref<engine::OGLGraphicsSystem> graphics = new engine::OGLGraphicsSystem(window);
+	
 	window->setGraphics(graphics); // Set graphics for window
 	engine::Ref<engine::GraphicsApplication> application = new engine::TestApplication(window, graphics);
 	window->setApplication(application); // Set application for window

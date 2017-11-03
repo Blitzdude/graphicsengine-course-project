@@ -10,6 +10,7 @@
 #include <OGL/OGL.h>
 #include <cstdlib>
 #include <core/Log.h>
+#include <string>
 
 namespace engine
 {
@@ -109,6 +110,8 @@ namespace engine
 		LOGI("  GL_EXTENSIONS: %s", glGetString(GL_EXTENSIONS));
 		LOGI("Surface size: %dx%d", w, h);
 		
+		// initialize shaders and such
+		
 		m_active = true;
 	}
 
@@ -135,4 +138,152 @@ namespace engine
 		eglSwapBuffers(m_eglDisplay, m_eglSurface);
 	}
 
+	GLuint OGLGraphicsSystem::CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath)
+	{
+		std::string vertSource;
+		std::string fragSource;
+
+		readFileToBuffer(vertexShaderFilePath, vertSource);
+		readFileToBuffer(fragmentShaderFilePath, fragSource);
+
+		compileShadersFromSource(vertSource.c_str(), fragSource.c_str());
+
+	
+
+		// link the shaders to the program then detach them
+		linkShaders();
+
+		return m_programID;
+	
+	}
+
+	void OGLGraphicsSystem::readFileToBuffer(std::string filePath, std::string & buffer)
+	{
+		std::ifstream file(filePath, std::ios::binary);
+		if (file.fail()) {
+			perror(filePath.c_str());
+
+		}
+
+		//seek to the end
+		file.seekg(0, std::ios::end);
+
+		//Get the file size
+		unsigned int fileSize = (unsigned int)file.tellg();
+		file.seekg(0, std::ios::beg);
+
+		//Reduce the file size by any header bytes that might be present
+		fileSize -= (unsigned int)file.tellg();
+
+		buffer.resize(fileSize);
+		file.read((char *)&(buffer[0]), fileSize);
+		file.close();
+	}
+
+	void OGLGraphicsSystem::compileShadersFromSource(const char * vertexSource, const char * fragmentSource)
+	{
+		
+		//Get a program object.
+		m_programID = glCreateProgram();
+
+		//Create the vertex shader object, and store its ID
+		m_vertexShaderID = glCreateShader(GL_VERTEX_SHADER);
+
+		//Create the fragment shader object, and store its ID
+		m_fragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
+
+		//Compile each shader
+		compileShader(vertexSource, "Vertex Shader", m_vertexShaderID);
+		compileShader(fragmentSource, "Fragment Shader", m_fragmentShaderID);
+
+	}
+
+	void OGLGraphicsSystem::compileShader(const char * source, const std::string & name, GLuint id)
+	{
+
+		//tell opengl that we want to use fileContents as the contents of the shader file
+		glShaderSource(id, 1, &source, nullptr);
+
+		//compile the shader
+		glCompileShader(id);
+
+		//check for errors
+		GLint success = 0;
+		glGetShaderiv(id, GL_COMPILE_STATUS, &success);
+
+		if (success == GL_FALSE) //error checking
+		{
+			GLint maxLength = 0;
+			glGetShaderiv(id, GL_INFO_LOG_LENGTH, &maxLength);
+
+			//The maxLength includes the NULL character
+			GLchar errorLog[128];
+			glGetShaderInfoLog(id, maxLength, &maxLength, &errorLog[0]);
+
+			//Provide the infolog in whatever manor you deem best.
+			//Exit with failure.
+			glDeleteShader(id); //Don't leak the shader.
+
+			//Print error log and quit
+			std::printf("Shader %s failed to compile: %s\n",name.c_str(), &(errorLog[0]));
+		}
+	}
+
+	void OGLGraphicsSystem::linkShaders()
+	{
+		//Attach our shaders to our program
+		glAttachShader(m_programID, m_vertexShaderID);
+		glAttachShader(m_programID, m_fragmentShaderID);
+
+		// binds the attributes TODO: create separate method. 
+		glBindAttribLocation(m_programID, 0, "vPosition");
+
+		//Link our program
+		glLinkProgram(m_programID);
+
+		//Note the different functions here: glGetProgram* instead of glGetShader*.
+		GLint isLinked = 0;
+		glGetProgramiv(m_programID, GL_LINK_STATUS, (int *)&isLinked);
+		if (isLinked == GL_FALSE)
+		{
+			GLint maxLength = 0;
+			glGetProgramiv(m_programID, GL_INFO_LOG_LENGTH, &maxLength);
+
+			//The maxLength includes the NULL character
+			GLchar errorLog[128];
+			glGetProgramInfoLog(m_programID, maxLength, &maxLength, &errorLog[0]);
+
+			//We don't need the program anymore.
+			glDeleteProgram(m_programID);
+			//Don't leak shaders either.
+			glDeleteShader(m_vertexShaderID);
+			glDeleteShader(m_fragmentShaderID);
+
+			//print the error log and quit
+			std::printf("Shaders failed to link! %s\n", &(errorLog[0]));
+		}
+
+		//Always detach shaders after a successful link.
+		glDetachShader(m_programID, m_vertexShaderID);
+		glDetachShader(m_programID, m_fragmentShaderID);
+		glDeleteShader(m_vertexShaderID);
+		glDeleteShader(m_fragmentShaderID);
+	}
+
+	void OGLGraphicsSystem::use(GLuint programID)
+	{
+		glUseProgram(programID);
+		// enable attributes. Just one for now.
+		glEnableVertexAttribArray(0);
+	}
+
+	void OGLGraphicsSystem::unUse()
+	{
+		glUseProgram(0);
+		// disable attributes. Just one for now.
+		glDisableVertexAttribArray(0);
+	}
+
+	
+	
 }
