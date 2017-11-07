@@ -18,7 +18,6 @@ namespace engine
 		: GraphicsSystem()
 		, m_window(window)
 		, m_active(false)
-		, m_shader(nullptr)
 	{
 		assert(window != 0);
 		
@@ -113,21 +112,13 @@ namespace engine
 		
 		// initialize shaders and such
 		
-		if (m_shader == nullptr) {
-			LOGI("Create shader Program failed\n");
-			
-		}
-		
 		m_active = true;
 	}
 
-
 	OGLGraphicsSystem::~OGLGraphicsSystem()
 	{
+		
 	}
-
-	
-	
 
 	void OGLGraphicsSystem::clearScreen(float red, float green, float blue, bool setViewport)
 	{
@@ -145,13 +136,13 @@ namespace engine
 	}
 
 	
-	void OGLGraphicsSystem::drawTriangle(	Shader* shader,
+	void OGLGraphicsSystem::drawTriangles(	Shader* shader,
 											float vertices[],
 											float textureCoordinates[],
 											int numVertices)
 	{
 		// bind program to be used
-		m_shader->use();
+		shader->use();
 
 		// set position of the vertex
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, vertices);
@@ -165,7 +156,9 @@ namespace engine
 		glDrawArrays(GL_TRIANGLES, 0, numVertices);
 
 		// dont forget to unuse !
-	//	unUse();
-	}
+		shader->unUse();
+		glDisableVertexAttribArray(0);
+		glDisableVertexAttribArray(1);
 
+	}
 }

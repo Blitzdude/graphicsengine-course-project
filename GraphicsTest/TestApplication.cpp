@@ -18,11 +18,17 @@ namespace engine
 		: GraphicsApplication(window, graphics)
 		, m_totalTime(0.0f)
 	{
+		init();
 	}
 
 
 	TestApplication::~TestApplication()
 	{
+	}
+
+	void TestApplication::init()
+	{
+		m_shader.CreateShaderProgram("Shaders/VertexShader.vert", "Shaders/FragmentShader.frag");
 	}
 
 	bool TestApplication::update(float deltaTime)
@@ -67,10 +73,8 @@ namespace engine
 
 		// set OpenGL drawing widnow display to entire window.
 		glViewport(0, 0, window->getWidth(), window->getHeight());
-		// Clear the color and depth buffer
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
-		//graphics->drawTriangle();
+		graphics->drawTriangles(&m_shader, quad, textureCoordinates, 6);
 
 		// switch secondary buffer to be displayed on screen. 
 		graphics->swapBuffers();

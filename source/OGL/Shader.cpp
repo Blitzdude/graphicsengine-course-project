@@ -11,6 +11,7 @@ namespace engine {
 
 	Shader::~Shader()
 	{
+		glDeleteProgram(programId);
 	}
 
 	void Shader::CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath)
@@ -25,8 +26,6 @@ namespace engine {
 
 		// link the shaders to the program then detach them
 		linkShaders();
-
-		
 
 	}
 
@@ -95,7 +94,6 @@ namespace engine {
 			//Exit with failure.
 			glDeleteShader(id); //Don't leak the shader.
 
-								//Print error log and quit
 			LOGI("Shader %s failed to compile: %s\n", name.c_str(), &(errorLog[0]));
 		}
 	}

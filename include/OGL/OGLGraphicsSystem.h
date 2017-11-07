@@ -32,12 +32,10 @@ namespace engine
 	
 
 		// draw functions
-		virtual void drawTriangle(	Shader* shader,
+		virtual void drawTriangles(	Shader* shader,
 									float vertices[],
 									float textureCoordinates[],
 									int numVertices);
-	public:
-		Shader* m_shader;
 
 	private:
 		engine::Ref<Window> m_window;	// Window where graphics is binded
@@ -51,6 +49,7 @@ namespace engine
 		// opengle ids
 		GLuint m_vertexShaderID;
 		GLuint m_fragmentShaderID;
+
 
 	};
 

@@ -1,5 +1,1 @@
-﻿  win32_main.cpp
-  TestApplication.cpp
-  Generating Code...
-  GraphicsTest.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
-  GraphicsTest.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.pdb (Full PDB)
+﻿LINK : fatal error LNK1168: cannot open C:\Users\Joel\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe for writing

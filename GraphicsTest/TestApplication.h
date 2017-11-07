@@ -27,6 +27,8 @@ namespace engine
 
 		~TestApplication();
 
+		void init();
+
 		/// Updates application. Returns true, if application is running.
 		virtual bool update(float deltaTime);
 		

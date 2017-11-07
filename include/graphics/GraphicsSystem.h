@@ -30,7 +30,7 @@ namespace engine
 		// Method for swapping backbuffer to screen.
 		virtual void swapBuffers() = 0;
 
-		virtual void drawTriangle(	Shader* shader,
+		virtual void drawTriangles(	Shader* shader,
 									float vertices[],
 									float textureCoordinates[],
 									int numVertices) = 0; 
