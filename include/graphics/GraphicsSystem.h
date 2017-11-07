@@ -12,12 +12,14 @@
 #include <string>
 #include <fstream>
 #include <GLES2\gl2.h>
+#include <OGL\Shader.h>
 
 namespace engine
 {
 	class GraphicsSystem :
 		public Object
 	{
+
 	public:
 		GraphicsSystem();
 		~GraphicsSystem();
@@ -28,17 +30,10 @@ namespace engine
 		// Method for swapping backbuffer to screen.
 		virtual void swapBuffers() = 0;
 
-		// Method for creating and linking shader prorgrams
-		virtual GLuint CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath) = 0;
-
-		virtual void use(GLuint programID) = 0;
-		
-		virtual void unUse() = 0;
-
-		virtual void drawTriangle(GLuint programID,
-			float vertices[],
-			float textureCoordinates[],
-			int numVertices) = 0; 
+		virtual void drawTriangle(	Shader* shader,
+									float vertices[],
+									float textureCoordinates[],
+									int numVertices) = 0; 
 
 		
 	};

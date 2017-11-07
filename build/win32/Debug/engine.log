@@ -1,2 +1,7 @@
 ﻿  OGLGraphicsSystem.cpp
-  engine.vcxproj -> C:\Users\joelkan\Desktop\UAE2dEngine-repository\build\win32\Debug\engine.lib
+c:\users\joelkan\desktop\uae2dengine-repository\source\ogl\oglgraphicssystem.cpp(148): warning C4100: 'shader': unreferenced formal parameter
+  Shader.cpp
+  GraphicsSystem.cpp
+  GraphicsApplication.cpp
+  Generating Code...
+  engine.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\engine.lib

@@ -10,27 +10,12 @@
 #include <graphics/GraphicsSystem.h>
 #include <core/Ref.h>
 #include <EGL/egl.h>
+#include <OGL/Shader.h>
 
 namespace engine
 {
 	// Forward declare Window-class
 	class Window;
-
-	struct Shader {
-		// handle to program object
-		GLuint programObject;
-		
-		// attribute location
-		GLint positionLocation;
-		GLint textureLocation;
-
-		// sampler location
-		GLint samplerLocation;
-
-		// Texture handle
-		GLuint textureId;
-
-	};
 
 	class OGLGraphicsSystem :
 		public GraphicsSystem
@@ -45,26 +30,14 @@ namespace engine
 
 		virtual void swapBuffers();
 	
-		// Method for creating and linking shader prorgrams
-		virtual GLuint CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath);
-
-		virtual void readFileToBuffer(std::string filePath, std::string& buffer);
-
-		virtual void compileShadersFromSource(const char* vertexSource, const char* fragmentSource);
-
-		virtual void compileShader(const char* source, const std::string& name, GLuint id);
-
-		virtual void linkShaders();
-
-		virtual void use(GLuint programID);
-
-		virtual void unUse();
 
 		// draw functions
-		virtual void drawTriangle(GLuint programID,
-			float vertices[],
-			float textureCoordinates[],
-			int numVertices);
+		virtual void drawTriangle(	Shader* shader,
+									float vertices[],
+									float textureCoordinates[],
+									int numVertices);
+	public:
+		Shader* m_shader;
 
 	private:
 		engine::Ref<Window> m_window;	// Window where graphics is binded
@@ -79,7 +52,6 @@ namespace engine
 		GLuint m_vertexShaderID;
 		GLuint m_fragmentShaderID;
 
-		GLuint m_programID;
 	};
 
 }

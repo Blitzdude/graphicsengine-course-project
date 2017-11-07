@@ -23,7 +23,9 @@
     <ClCompile Include="win32_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestApplication.cpp" />
+    <ClCompile Include="TestApplication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

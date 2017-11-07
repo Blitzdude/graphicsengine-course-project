@@ -18,8 +18,6 @@ namespace engine
 		: GraphicsApplication(window, graphics)
 		, m_totalTime(0.0f)
 	{
-		// initialize the shaders and link them to a program.
-		m_graphicsProgramId = graphics->CreateShaderProgram("Shaders/VertexShader.vert", "Shaders/FragmentShader.frag");
 	}
 
 
@@ -72,8 +70,7 @@ namespace engine
 		// Clear the color and depth buffer
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
-		graphics->drawTriangle(m_graphicsProgramId, quad, textureCoordinates, 6);
-		
+		//graphics->drawTriangle();
 
 		// switch secondary buffer to be displayed on screen. 
 		graphics->swapBuffers();

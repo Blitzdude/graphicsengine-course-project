@@ -9,7 +9,9 @@
 
 #include <graphics/GraphicsApplication.h>
 #include <core/Log.h>
-#include <GLES2\gl2.h>
+#include <GLES2/gl2.h>
+#include <OGL/Shader.h>
+
 
 namespace engine
 {
@@ -32,8 +34,8 @@ namespace engine
 		virtual void render(Window* window, GraphicsSystem* graphics);
 
 	private:
-		float						m_totalTime;
-		GLuint						m_graphicsProgramId;
+		float			m_totalTime;
+		Shader			m_shader;
 	};
 
 }

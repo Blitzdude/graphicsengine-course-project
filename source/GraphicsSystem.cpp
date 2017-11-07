@@ -11,7 +11,6 @@ namespace engine
 {
 	GraphicsSystem::GraphicsSystem()
 	{
-
 	}
 
 

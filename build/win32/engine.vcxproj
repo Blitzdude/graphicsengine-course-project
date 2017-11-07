@@ -83,8 +83,8 @@
     <ClInclude Include="..\..\include\graphics\Window.h" />
     <ClInclude Include="..\..\include\OGL\OGL.h" />
     <ClInclude Include="..\..\include\OGL\OGLGraphicsSystem.h" />
+    <ClInclude Include="..\..\include\OGL\Shader.h" />
     <ClInclude Include="..\..\include\win32\Win32Window.h" />
-    <ClInclude Include="Shader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\android\AndroidWindow.cpp">
@@ -96,9 +96,9 @@
     <ClCompile Include="..\..\source\Object.cpp" />
     <ClCompile Include="..\..\source\OGL\OGL.cpp" />
     <ClCompile Include="..\..\source\ogl\OGLGraphicsSystem.cpp" />
+    <ClCompile Include="..\..\source\OGL\Shader.cpp" />
     <ClCompile Include="..\..\source\win32\Win32Window.cpp" />
     <ClCompile Include="..\..\source\Window.cpp" />
-    <ClCompile Include="Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\include\core\Ref.inl" />

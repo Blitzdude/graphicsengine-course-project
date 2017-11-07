@@ -1,4 +1,4 @@
-#Fri Nov 03 15:17:41 EET 2017
-base.0=C\:\\Users\\joelkan\\Desktop\\graphicsengine-course-project\\build\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Tue Nov 07 14:27:38 EET 2017
+base.0=C\:\\Users\\JoelKan\\Desktop\\UAE2dEngine-repository\\build\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 renamed.0=classes.dex
-file.0=C\:\\Users\\joelkan\\Desktop\\graphicsengine-course-project\\build\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex
+file.0=C\:\\Users\\JoelKan\\Desktop\\UAE2dEngine-repository\\build\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex
