@@ -148,8 +148,6 @@ namespace engine
 
 		compileShadersFromSource(vertSource.c_str(), fragSource.c_str());
 
-	
-
 		// link the shaders to the program then detach them
 		linkShaders();
 
@@ -220,12 +218,11 @@ namespace engine
 			GLchar errorLog[128];
 			glGetShaderInfoLog(id, maxLength, &maxLength, &errorLog[0]);
 
-			//Provide the infolog in whatever manor you deem best.
 			//Exit with failure.
 			glDeleteShader(id); //Don't leak the shader.
 
 			//Print error log and quit
-			std::printf("Shader %s failed to compile: %s\n",name.c_str(), &(errorLog[0]));
+			LOGI("Shader %s failed to compile: %s\n", name.c_str(), &(errorLog[0]));
 		}
 	}
 
@@ -260,7 +257,7 @@ namespace engine
 			glDeleteShader(m_fragmentShaderID);
 
 			//print the error log and quit
-			std::printf("Shaders failed to link! %s\n", &(errorLog[0]));
+			LOGI("Shaders failed to link! %s\n", &(errorLog[0]));
 		}
 
 		//Always detach shaders after a successful link.
@@ -280,8 +277,31 @@ namespace engine
 	void OGLGraphicsSystem::unUse()
 	{
 		glUseProgram(0);
-		// disable attributes. Just one for now.
+		// disable attributes. Just two for now.
 		glDisableVertexAttribArray(0);
+		glDisableVertexAttribArray(1);
+	}
+
+	void OGLGraphicsSystem::drawTriangle(	GLuint programID,
+											float vertices[],
+											float textureCoordinates[],
+											int numVertices)
+	{
+		// bind program to be used
+		use(programID);
+
+		// set position of the vertex
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, vertices);
+
+		// Set texture coordinates
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, textureCoordinates);
+		glEnableVertexAttribArray(1);
+
+		// draw the vertex array as triangle
+		glDrawArrays(GL_TRIANGLES, 0, numVertices);
+
+		// dont forget to unuse !
+		unUse();
 	}
 
 	

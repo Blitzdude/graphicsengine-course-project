@@ -9,7 +9,6 @@
 #include <graphics/GraphicsSystem.h>
 #include <graphics/Window.h>
 #include <math.h>
-#include <GLES2\gl2.h>
 
 
 namespace engine
@@ -20,8 +19,7 @@ namespace engine
 		, m_totalTime(0.0f)
 	{
 		// initialize the shaders and link them to a program.
-		m_programId = graphics->CreateShaderProgram("Shaders/VertexShader.vert", "Shaders/FragmentShader.frag");
-		m_blueProgramId = graphics->CreateShaderProgram("Shaders/VertexShader.vert", "Shaders/BlueFragmentShader.frag");
+		m_graphicsProgramId = graphics->CreateShaderProgram("Shaders/VertexShader.vert", "Shaders/FragmentShader.frag");
 	}
 
 
@@ -39,18 +37,27 @@ namespace engine
 	void TestApplication::render(Window* window, GraphicsSystem* graphics)
 	{
 		// Triangles vertex coordinates;
-		GLfloat vVertices1[] = {
-			-0.5f, 0.5f, 0.0f,
-			-0.5f, -0.5f, 0.0f,
-			0.5f, -0.5f, 0.0f
+		float size = 1.0f;
+		float dx = -0.5f;
+		float dy = -0.5f;
+		float depth = 0.0f;
+		GLfloat quad[] = {
+			dx + 0.0f, dy + size, depth, //vertex 0
+			dx + 0.0f, dy + 0.0f, depth, //vertex 1
+			dx + size, dy + 0.0f, depth, //vertex 2
+			dx + size, dy + size, depth, //vertex 3
+			dx + size, dy + 0.0f, depth, //vertex 4
+			dx + 0.0f, dy + size, depth  //vertex 5
 		};
 
-		// Triangles vertex coordinates;
-		GLfloat vVertices2[] = {
-			
-			-0.5f, 0.5f, 0.0f,
-			0.5f, -0.5f, 0.0f,
-			0.5f, 0.5f, 0.0f
+		// Texture coordinates, whose origin (0,0) is top-left corner
+		GLfloat textureCoordinates[] = {
+			0,0, //vertex 0
+			0,1, //vertex 1
+			1,1, //vertex 2
+			1,0, //vertex 3
+			1,1, //vertex 4
+			0,0  //vertex 5
 		};
 		
 		(void)window;	
@@ -64,29 +71,9 @@ namespace engine
 		glViewport(0, 0, window->getWidth(), window->getHeight());
 		// Clear the color and depth buffer
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		// Use the shader program
-		graphics->use(m_programId);
-
-		// Load the vertex data to GPU
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, vVertices1);
-		// Enable the first vertex attribute array ("attribute vec4 vPosition" in shader code)
-			// done in graphics->use();
-
-		// draw triangles in GL_triangle mode
-		glDrawArrays(GL_TRIANGLES, 0, 3);
-
-		graphics->use(m_blueProgramId);
-
-		// Load the vertex data to GPU
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, vVertices2);
-		// Enable the first vertex attribute array ("attribute vec4 vPosition" in shader code)
-		// done in graphics->use();
-
-		// draw triangles in GL_triangle mode
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+	
+		graphics->drawTriangle(m_graphicsProgramId, quad, textureCoordinates, 6);
 		
-		graphics->unUse();
-
 
 		// switch secondary buffer to be displayed on screen. 
 		graphics->swapBuffers();

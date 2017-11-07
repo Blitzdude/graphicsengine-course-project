@@ -10,12 +10,27 @@
 #include <graphics/GraphicsSystem.h>
 #include <core/Ref.h>
 #include <EGL/egl.h>
-#include "graphics/esUtil.h"
 
 namespace engine
 {
 	// Forward declare Window-class
 	class Window;
+
+	struct Shader {
+		// handle to program object
+		GLuint programObject;
+		
+		// attribute location
+		GLint positionLocation;
+		GLint textureLocation;
+
+		// sampler location
+		GLint samplerLocation;
+
+		// Texture handle
+		GLuint textureId;
+
+	};
 
 	class OGLGraphicsSystem :
 		public GraphicsSystem
@@ -45,6 +60,12 @@ namespace engine
 
 		virtual void unUse();
 
+		// draw functions
+		virtual void drawTriangle(GLuint programID,
+			float vertices[],
+			float textureCoordinates[],
+			int numVertices);
+
 	private:
 		engine::Ref<Window> m_window;	// Window where graphics is binded
 		bool m_active;					// True-flag if all is okay.
@@ -55,9 +76,10 @@ namespace engine
 		EGLSurface m_eglSurface; // Surface object
 
 		// opengle ids
-		GLuint m_programID;
 		GLuint m_vertexShaderID;
 		GLuint m_fragmentShaderID;
+
+		GLuint m_programID;
 	};
 
 }

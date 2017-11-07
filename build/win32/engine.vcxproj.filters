@@ -72,6 +72,9 @@
     <ClInclude Include="..\..\include\android\AndroidWindow.h">
       <Filter>Header Files\android</Filter>
     </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files\OGL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\ogl\OGLGraphicsSystem.cpp">
@@ -100,6 +103,9 @@
     </ClCompile>
     <ClCompile Include="..\..\source\android\AndroidWindow.cpp">
       <Filter>Source Files\android</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files\OGL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

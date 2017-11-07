@@ -1,4 +1,4 @@
-C:/Users/joelkan/Desktop/graphicsengine-course-project/build/android/app/.externalNativeBuild/cmake/release/armeabi/CMakeFiles/app-glue.dir
-C:/Users/joelkan/Desktop/graphicsengine-course-project/build/android/app/.externalNativeBuild/cmake/release/armeabi/CMakeFiles/native-activity.dir
-C:/Users/joelkan/Desktop/graphicsengine-course-project/build/android/app/.externalNativeBuild/cmake/release/armeabi/CMakeFiles/edit_cache.dir
-C:/Users/joelkan/Desktop/graphicsengine-course-project/build/android/app/.externalNativeBuild/cmake/release/armeabi/CMakeFiles/rebuild_cache.dir
+C:/Users/joelkan/Desktop/UAE2dEngine-repository/build/android/app/.externalNativeBuild/cmake/release/armeabi/CMakeFiles/app-glue.dir
+C:/Users/joelkan/Desktop/UAE2dEngine-repository/build/android/app/.externalNativeBuild/cmake/release/armeabi/CMakeFiles/native-activity.dir
+C:/Users/joelkan/Desktop/UAE2dEngine-repository/build/android/app/.externalNativeBuild/cmake/release/armeabi/CMakeFiles/edit_cache.dir
+C:/Users/joelkan/Desktop/UAE2dEngine-repository/build/android/app/.externalNativeBuild/cmake/release/armeabi/CMakeFiles/rebuild_cache.dir

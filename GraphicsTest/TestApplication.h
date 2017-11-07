@@ -9,7 +9,7 @@
 
 #include <graphics/GraphicsApplication.h>
 #include <core/Log.h>
-#include "graphics/esUtil.h"
+#include <GLES2\gl2.h>
 
 namespace engine
 {
@@ -33,9 +33,7 @@ namespace engine
 
 	private:
 		float						m_totalTime;
-		ESContext					m_esContext;
-		GLuint						m_programId;
-		GLuint						m_blueProgramId;
+		GLuint						m_graphicsProgramId;
 	};
 
 }

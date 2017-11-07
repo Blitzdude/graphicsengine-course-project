@@ -12,4 +12,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/joelkan/Desktop/graphicsengine-course-project/build/android/app/.externalNativeBuild/cmake/release/arm64-v8a
+-- Build files have been written to: C:/Users/joelkan/Desktop/UAE2dEngine-repository/build/android/app/.externalNativeBuild/cmake/release/arm64-v8a

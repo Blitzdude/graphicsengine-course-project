@@ -35,6 +35,11 @@ namespace engine
 		
 		virtual void unUse() = 0;
 
+		virtual void drawTriangle(GLuint programID,
+			float vertices[],
+			float textureCoordinates[],
+			int numVertices) = 0; 
+
 		
 	};
 

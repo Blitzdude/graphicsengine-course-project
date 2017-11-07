@@ -1,2 +1,3 @@
-﻿  TestApplication.cpp
-  GraphicsTest.vcxproj -> C:\Users\joelkan\Desktop\graphicsengine-course-project\build\win32\Debug\GraphicsTest.exe
+﻿  win32_main.cpp
+  GraphicsTest.vcxproj -> C:\Users\joelkan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
+  GraphicsTest.vcxproj -> C:\Users\joelkan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.pdb (Full PDB)

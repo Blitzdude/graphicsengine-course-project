@@ -1,7 +1,2 @@
-﻿  GraphicsApplication.cpp
-  Generating Code...
-  Compiling...
-  OGLGraphicsSystem.cpp
-  GraphicsSystem.cpp
-  Generating Code...
-  engine.vcxproj -> C:\Users\joelkan\Desktop\graphicsengine-course-project\build\win32\Debug\engine.lib
+﻿  OGLGraphicsSystem.cpp
+  engine.vcxproj -> C:\Users\joelkan\Desktop\UAE2dEngine-repository\build\win32\Debug\engine.lib
