@@ -75,6 +75,12 @@
     <ClInclude Include="..\..\include\OGL\Shader.h">
       <Filter>Header Files\OGL</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\OGL\Texture2D.h">
+      <Filter>Header Files\OGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\IOManager.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\ogl\OGLGraphicsSystem.cpp">
@@ -86,26 +92,32 @@
     <ClCompile Include="..\..\source\OGL\OGL.cpp">
       <Filter>Source Files\OGL</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\source\ElapsedTimer.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\Object.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\GraphicsApplication.cpp">
-      <Filter>Source Files\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\GraphicsSystem.cpp">
-      <Filter>Source Files\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\Window.cpp">
-      <Filter>Source Files\graphics</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\source\android\AndroidWindow.cpp">
       <Filter>Source Files\android</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\OGL\Shader.cpp">
       <Filter>Source Files\OGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\OGL\Texture2D.cpp">
+      <Filter>Source Files\OGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\core\IOManager.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\core\ElapsedTimer.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\core\Object.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\graphics\GraphicsApplication.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\graphics\GraphicsSystem.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\graphics\Window.cpp">
+      <Filter>Source Files\graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

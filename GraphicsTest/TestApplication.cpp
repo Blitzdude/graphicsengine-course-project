@@ -28,7 +28,38 @@ namespace engine
 
 	void TestApplication::init()
 	{
-		m_shader.CreateShaderProgram("Shaders/VertexShader.vert", "Shaders/FragmentShader.frag");
+		// shader 0 = textured shader
+		m_shaders.push_back(new Shader("Shaders/VertexShader.vert", "Shaders/FragmentShader.frag"));
+
+		// Create 2x2 image, 3 bytes per pixel (R, G, B)
+		GLubyte pixels[4 * 3] = 
+		{
+			255, 0, 0,		// Red
+			0, 255, 0,		// Green
+			0, 0, 255,		// Blue
+			255, 255, 0		// Yellow
+		};
+
+		GLubyte finnishPixels[12 * 3] =
+		{
+			255, 255, 255,	// white
+			0, 0, 255,		// blue
+			255, 255, 255,	// white
+			255, 255, 255,	// white
+			
+			0, 0, 255,		// blue
+			0, 0, 255,		// blue
+			0, 0, 255,		// blue
+			0, 0, 255,		// blue
+
+			255, 255, 255,	// white
+			0, 0, 255,		// blue
+			255, 255, 255,	// white
+			255, 255, 255	// white
+		};
+
+		m_textures.push_back(new Texture2D(2, 2, 3, pixels));
+		m_textures.push_back(new Texture2D(4, 3, 3, finnishPixels));
 	}
 
 	bool TestApplication::update(float deltaTime)
@@ -40,10 +71,13 @@ namespace engine
 
 	void TestApplication::render(Window* window, GraphicsSystem* graphics)
 	{
+		float xVal = cosf(2.0f*m_totalTime) / 3.0f;
+		float yVal = sinf(2.0f*m_totalTime) / 3.0f;
+
 		// Triangles vertex coordinates;
 		float size = 1.0f;
-		float dx = -0.5f;
-		float dy = -0.5f;
+		float dx = -0.5f + xVal;
+		float dy = -0.5f + yVal;
 		float depth = 0.0f;
 		GLfloat quad[] = {
 			dx + 0.0f, dy + size, depth, //vertex 0
@@ -65,16 +99,16 @@ namespace engine
 		};
 		
 		(void)window;	
-		float val = fabsf(sinf(2.0f*m_totalTime));
 		
+		float val = fabsf(sinf(2.0f*m_totalTime));
 		// Clear screen with pulsating yellow
-		graphics->clearScreen(val, val, 0.0f, true);
+		graphics->clearScreen(val, val * 1.5f, val * 2.0f, true);
 
 
-		// set OpenGL drawing widnow display to entire window.
+		// set OpenGL drawing window display to entire window.
 		glViewport(0, 0, window->getWidth(), window->getHeight());
 	
-		graphics->drawTriangles(&m_shader, quad, textureCoordinates, 6);
+		graphics->drawTriangles(m_shaders[0], m_textures[1], quad, textureCoordinates, 6);
 
 		// switch secondary buffer to be displayed on screen. 
 		graphics->swapBuffers();

@@ -11,6 +11,8 @@
 #include <core/Log.h>
 #include <GLES2/gl2.h>
 #include <OGL/Shader.h>
+#include <OGL/Texture2D.h>
+#include <vector>
 
 
 namespace engine
@@ -36,8 +38,9 @@ namespace engine
 		virtual void render(Window* window, GraphicsSystem* graphics);
 
 	private:
-		float			m_totalTime;
-		Shader			m_shader;
+		float						m_totalTime;
+		std::vector<Shader*>		m_shaders;
+		std::vector<Texture2D*>		m_textures;
 	};
 
 }

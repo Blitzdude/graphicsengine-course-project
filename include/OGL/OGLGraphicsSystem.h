@@ -11,6 +11,7 @@
 #include <core/Ref.h>
 #include <EGL/egl.h>
 #include <OGL/Shader.h>
+#include <OGL/Texture2D.h>
 
 namespace engine
 {
@@ -33,6 +34,12 @@ namespace engine
 
 		// draw functions
 		virtual void drawTriangles(	Shader* shader,
+									float vertices[],
+									float textureCoordinates[],
+									int numVertices);
+
+		virtual void drawTriangles(	Shader* shader,
+									Texture2D* texture,
 									float vertices[],
 									float textureCoordinates[],
 									int numVertices);

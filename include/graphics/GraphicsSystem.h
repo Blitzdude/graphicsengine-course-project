@@ -13,6 +13,7 @@
 #include <fstream>
 #include <GLES2\gl2.h>
 #include <OGL\Shader.h>
+#include <OGL\Texture2D.h>
 
 namespace engine
 {
@@ -35,6 +36,11 @@ namespace engine
 									float textureCoordinates[],
 									int numVertices) = 0; 
 
+		virtual void drawTriangles(	Shader* shader,
+									Texture2D* texture,
+									float vertices[],
+									float textureCoordinates[],
+									int numVertices) = 0;
 		
 	};
 

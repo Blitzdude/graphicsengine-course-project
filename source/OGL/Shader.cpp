@@ -1,12 +1,14 @@
 #include "OGL/Shader.h"
 #include <core\Log.h>
+#include <core/IOManager.h>
 #include <fstream>
 
 
 namespace engine {
 
-	Shader::Shader() 
+	Shader::Shader(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath)
 	{
+		CreateShaderProgram(vertexShaderFilePath, fragmentShaderFilePath);
 	}
 
 	Shader::~Shader()
@@ -19,8 +21,8 @@ namespace engine {
 		std::string vertSource;
 		std::string fragSource;
 
-		readFileToBuffer(vertexShaderFilePath, vertSource);
-		readFileToBuffer(fragmentShaderFilePath, fragSource);
+		IOManager::readFileToBuffer(vertexShaderFilePath, vertSource);
+		IOManager::readFileToBuffer(fragmentShaderFilePath, fragSource);
 
 		compileShadersFromSource(vertSource.c_str(), fragSource.c_str());
 
@@ -29,28 +31,7 @@ namespace engine {
 
 	}
 
-	void Shader::readFileToBuffer(std::string filePath, std::string & buffer)
-	{
-		std::ifstream file(filePath, std::ios::binary);
-		if (file.fail()) {
-			perror(filePath.c_str());
-
-		}
-
-		//seek to the end
-		file.seekg(0, std::ios::end);
-
-		//Get the file size
-		unsigned int fileSize = (unsigned int)file.tellg();
-		file.seekg(0, std::ios::beg);
-
-		//Reduce the file size by any header bytes that might be present
-		fileSize -= (unsigned int)file.tellg();
-
-		buffer.resize(fileSize);
-		file.read((char *)&(buffer[0]), fileSize);
-		file.close();
-	}
+	
 
 	void Shader::compileShadersFromSource(const char * vertexSource, const char * fragmentSource)
 	{
@@ -147,6 +128,10 @@ namespace engine {
 	void Shader::unUse()
 	{
 		glUseProgram(0);
+	}
+	GLuint Shader::getUniformLocation(const char * const uniformName)
+	{
+		return glGetUniformLocation(programId, uniformName);
 	}
 }
 

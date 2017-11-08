@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _SHADER_H_
+#define _SHADER_H_
+
 #include <core/Object.h>
 #include <GLES2\gl2.h>
 #include <core\Ref.h>
@@ -12,12 +14,12 @@ namespace engine {
 	{
 	public:
 
-		Shader();
+		Shader(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath);
 
 		~Shader();
 
 		void CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath);
-		void readFileToBuffer(std::string filePath, std::string& buffer);
+		
 		void compileShadersFromSource(const char* vertexSource, const char* fragmentSource);
 
 		void compileShader(const char* source, const std::string& name, GLuint id);
@@ -27,6 +29,8 @@ namespace engine {
 		void use();
 
 		void unUse();
+
+		GLuint getUniformLocation(const char* const uniformName);
 
 		// public members
 		GLuint vertexShaderId;
@@ -38,3 +42,4 @@ namespace engine {
 
 }
 
+#endif // !_SHADER_H_

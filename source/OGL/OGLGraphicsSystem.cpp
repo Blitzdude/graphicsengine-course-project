@@ -161,4 +161,33 @@ namespace engine
 		glDisableVertexAttribArray(1);
 
 	}
+
+	void OGLGraphicsSystem::drawTriangles(Shader * shader, Texture2D * texture, float vertices[], float textureCoordinates[], int numVertices)
+	{
+		// Bind shader
+		shader->use();
+
+		// Set positions
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, vertices);
+		glEnableVertexAttribArray(0);
+
+		// set texture coordinates
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, textureCoordinates);
+		glEnableVertexAttribArray(1);
+
+		// bind texture
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, texture->getTextureId());
+
+		// set the sampler texture unit to 0
+		glUniform1i(shader->getUniformLocation("texture"), 0);
+
+		// draw vertex arrays as triangle
+		glDrawArrays(GL_TRIANGLES, 0, numVertices);
+
+		// don't forget to unUse!
+		shader->unUse();
+		glDisableVertexAttribArray(0);
+		glDisableVertexAttribArray(1);
+	}
 }
