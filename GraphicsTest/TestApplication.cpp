@@ -102,7 +102,7 @@ namespace engine
 		
 		float val = fabsf(sinf(2.0f*m_totalTime));
 		// Clear screen with pulsating yellow
-		graphics->clearScreen(val, val * 1.5f, val * 2.0f, true);
+		graphics->clearScreen(val, val * 1.5f, val * 0.5f, true);
 
 
 		// set OpenGL drawing window display to entire window.

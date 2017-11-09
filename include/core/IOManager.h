@@ -1,6 +1,8 @@
 #ifndef _IOMANAGER_H_
 #define _IOMANAGER_H_
 #include <vector>
+#include <string>
+#include "Log.h"
 
 namespace engine {
 

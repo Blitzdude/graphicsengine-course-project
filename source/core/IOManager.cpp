@@ -1,6 +1,11 @@
-#include "core\IOManager.h"
+#include "core/IOManager.h"
 #include <fstream>
 
+#if !defined(_WIN32)
+
+#include <android/asset_manager.h>
+
+#endif
 namespace engine {
 
 #if defined(_WIN32)
@@ -28,6 +33,31 @@ namespace engine {
 
 		return true;
 	}
+#else
+	bool IOManager::readFileToBuffer(std::string filePath, std::vector<unsigned char>& buffer)
+	{
+        JNIEnv* env;
+        jobject assetManager;
+
+        AAssetManager *apkAssetManager = AAssetManager_fromJava(env, assetManager);
+
+
+		// open the file
+
+		// seek to the end
+
+		// get file size
+
+		// reduce filesize by any header bytes that might be present
+
+		// read the file
+
+		// close the file
+
+		return true;
+	}
+#endif
+
 	
 	bool IOManager::readFileToBuffer(std::string filePath, std::string & buffer)
 	{
@@ -54,4 +84,3 @@ namespace engine {
 		return true;
 	}
 }
-#endif
