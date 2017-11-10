@@ -14,6 +14,9 @@
 #include <OGL/Texture2D.h>
 #include <vector>
 
+#if defined (ANDROID)
+#include <android/asset_manager.h>
+#endif
 
 namespace engine
 {
@@ -25,7 +28,12 @@ namespace engine
 		public GraphicsApplication
 	{
 	public:
-		TestApplication(Window* window, GraphicsSystem* graphics);
+	#if defined (ANDROID)
+			TestApplication(AAssetManager* manager, Window* window, GraphicsSystem* graphics);
+	#elif defined (_WIN32)
+			TestApplication(Window* window, GraphicsSystem* graphics);
+	#endif
+
 
 		~TestApplication();
 

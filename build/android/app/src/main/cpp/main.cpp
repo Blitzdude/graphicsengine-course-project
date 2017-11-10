@@ -41,7 +41,7 @@ int AndroidEngine::initDisplay()
     window = new engine::AndroidWindow(app->window);
     graphics = new engine::OGLGraphicsSystem(window);
     window->setGraphics(graphics);
-    application = new engine::TestApplication(window,graphics);
+    application = new engine::TestApplication(app->activity->assetManager,window,graphics);
     window->setApplication(application);
     frameTimer = new engine::ElapsedTimer();
     frameTimer->reset();

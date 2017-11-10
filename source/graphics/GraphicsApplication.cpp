@@ -14,8 +14,9 @@
 namespace engine
 {
 
-	GraphicsApplication::GraphicsApplication(Window* window, GraphicsSystem* graphics)
+	GraphicsApplication::GraphicsApplication( Window* window, GraphicsSystem* graphics, AAssetManager* manager /*= nullptr*/)
 		: Object()
+		, m_manager(manager)
 		, m_window(window)
 		, m_graphics(graphics)
 	{

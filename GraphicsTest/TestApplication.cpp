@@ -13,14 +13,22 @@
 
 namespace engine
 {
+#if defined (ANDROID)
+	TestApplication::TestApplication(AAssetManager * manager, Window * window, GraphicsSystem * graphics)
+            : GraphicsApplication(window, graphics)
+            , m_totalTime(0.0f)
+	{
 
+	}
+#elif defined(_WIN32)
 	TestApplication::TestApplication(Window* window, GraphicsSystem* graphics)
 		: GraphicsApplication(window, graphics)
 		, m_totalTime(0.0f)
 	{
+		LOGI("Starting UP.......................");
 		init();
 	}
-
+#endif
 
 	TestApplication::~TestApplication()
 	{
@@ -58,8 +66,9 @@ namespace engine
 			255, 255, 255	// white
 		};
 
-		m_textures.push_back(new Texture2D(2, 2, 3, pixels));
-		m_textures.push_back(new Texture2D(4, 3, 3, finnishPixels));
+		m_textures.push_back(new Texture2D(2, 2, 3, pixels));			// 0
+		m_textures.push_back(new Texture2D(4, 3, 3, finnishPixels));	// 1
+		m_textures.push_back(new Texture2D(4, 3, 4, "test.png"));		// 2
 	}
 
 	bool TestApplication::update(float deltaTime)
@@ -108,7 +117,7 @@ namespace engine
 		// set OpenGL drawing window display to entire window.
 		glViewport(0, 0, window->getWidth(), window->getHeight());
 	
-		graphics->drawTriangles(m_shaders[0], m_textures[1], quad, textureCoordinates, 6);
+		graphics->drawTriangles(m_shaders[0], m_textures[2], quad, textureCoordinates, 6);
 
 		// switch secondary buffer to be displayed on screen. 
 		graphics->swapBuffers();

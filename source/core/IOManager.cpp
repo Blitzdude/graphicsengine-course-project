@@ -1,86 +1,109 @@
 #include "core/IOManager.h"
 #include <fstream>
 
-#if !defined(_WIN32)
+#if defined(ANDROID)
 
 #include <android/asset_manager.h>
+#include <android/log.h>
+#include <android_native_app_glue.h>
+#include <malloc.h>
 
 #endif
 namespace engine {
 
 #if defined(_WIN32)
-	bool IOManager::readFileToBuffer(std::string filePath, std::vector<unsigned char>& buffer)
-	{
-		std::ifstream file(filePath, std::ios::binary);
-		if (file.fail()) {
-			perror(filePath.c_str());
-			return false;
-		}
+    bool IOManager::readFileToBuffer(std::string filePath, std::vector<unsigned char>& buffer)
+    {
+        std::ifstream file(filePath, std::ios::binary);
+        if (file.fail()) {
+            perror(filePath.c_str());
+            return false;
+        }
 
-		//seek to the end
-		file.seekg(0, std::ios::end);
+        //seek to the end
+        file.seekg(0, std::ios::end);
 
-		//Get the file size
-		unsigned int fileSize = (unsigned int)file.tellg();
-		file.seekg(0, std::ios::beg);
+        //Get the file size
+        unsigned int fileSize = (unsigned int)file.tellg();
+        file.seekg(0, std::ios::beg);
 
-		//Reduce the file size by any header bytes that might be present
-		fileSize -= (unsigned int)file.tellg();
+        //Reduce the file size by any header bytes that might be present
+        fileSize -= (unsigned int)file.tellg();
 
-		buffer.resize(fileSize);
-		file.read((char *)&(buffer[0]), fileSize);
-		file.close();
+        buffer.resize(fileSize);
+        file.read((char *)&(buffer[0]), fileSize);
+        file.close();
 
-		return true;
-	}
+        return true;
+    }
+
+    bool IOManager::readFileToBuffer(std::string filePath, std::string & buffer)
+    {
+        std::ifstream file(filePath, std::ios::binary);
+        if (file.fail()) {
+            perror(filePath.c_str());
+            return false;
+        }
+
+        //seek to the end
+        file.seekg(0, std::ios::end);
+
+        //Get the file size
+        unsigned int fileSize = (unsigned int)file.tellg();
+        file.seekg(0, std::ios::beg);
+
+        //Reduce the file size by any header bytes that might be present
+        fileSize -= (unsigned int)file.tellg();
+
+        buffer.resize(fileSize);
+        file.read((char *)&(buffer[0]), fileSize);
+        file.close();
+
+        return true;
+    }
+}
+
 #else
-	bool IOManager::readFileToBuffer(std::string filePath, std::vector<unsigned char>& buffer)
+
+	bool IOManager::readFileToBuffer(AAssetManager* manager, std::string filePath, std::vector<unsigned char>& buffer)
 	{
-        JNIEnv* env;
-        jobject assetManager;
+    
+        android_app* app;
+        AAssetManager* assetManager = app->activity->assetManager;
 
-        AAssetManager *apkAssetManager = AAssetManager_fromJava(env, assetManager);
+		AAsset* asset = AAssetManager_open(assetManager, filePath.c_str(), AASSET_MODE_BUFFER);
+        if(asset == NULL) {
+            LOGI("FILE NOT FOUND");
+            return false;
+        }
+        long size = AAsset_getLength(asset);
+        AAsset_read(asset, &buffer[0], size);
+
+        AAsset_close(asset);
 
 
-		// open the file
-
-		// seek to the end
-
-		// get file size
-
-		// reduce filesize by any header bytes that might be present
-
-		// read the file
-
-		// close the file
-
-		return true;
+        return true;
 	}
+
+    bool IOManager::readFileToBuffer(AAssetManager* manager, std::string filePath, std::string& buffer)
+    {
+		android_app* app;
+        AAssetManager* assetManager = app->activity->assetManager;
+
+        AAsset* asset = AAssetManager_open(assetManager, filePath.c_str(), AASSET_MODE_BUFFER);
+        if(asset == NULL) {
+            LOGI("FILE NOT FOUND");
+            return false;
+        }
+        long size = AAsset_getLength(asset);
+        AAsset_read(asset, &buffer[0], size);
+
+        AAsset_close(asset);
+
+        return true;
+
+    }
+}
 #endif
 
-	
-	bool IOManager::readFileToBuffer(std::string filePath, std::string & buffer)
-	{
-		std::ifstream file(filePath, std::ios::binary);
-		if (file.fail()) {
-			perror(filePath.c_str());
-			return false;
-		}
 
-		//seek to the end
-		file.seekg(0, std::ios::end);
-
-		//Get the file size
-		unsigned int fileSize = (unsigned int)file.tellg();
-		file.seekg(0, std::ios::beg);
-
-		//Reduce the file size by any header bytes that might be present
-		fileSize -= (unsigned int)file.tellg();
-
-		buffer.resize(fileSize);
-		file.read((char *)&(buffer[0]), fileSize);
-		file.close();
-
-		return true;
-	}
-}

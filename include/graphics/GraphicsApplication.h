@@ -13,13 +13,14 @@ namespace engine
 {
 	class Window;
 	class GraphicsSystem;
+	class AAssetManager;
 	
 
 	class GraphicsApplication :
 		public Object
 	{
 	public:
-		GraphicsApplication(Window* window, GraphicsSystem* graphics);
+		GraphicsApplication( Window* window, GraphicsSystem* graphics, AAssetManager* manager = nullptr);
 
 		virtual ~GraphicsApplication();
 
@@ -34,6 +35,7 @@ namespace engine
 	private:
 		Window* m_window;
 		GraphicsSystem* m_graphics;
+		AAssetManager* m_manager;
 	};
 
 }
