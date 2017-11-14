@@ -22,18 +22,17 @@ namespace engine
 {
 	class Window;
 	class GraphicsSystem;
-	
-	
+    class AAssetManager;
+
 	class TestApplication :
 		public GraphicsApplication
 	{
 	public:
 	#if defined (ANDROID)
-			TestApplication(AAssetManager* manager, Window* window, GraphicsSystem* graphics);
+			TestApplication(Window* window, GraphicsSystem* graphics, AAssetManager* manager);
 	#elif defined (_WIN32)
 			TestApplication(Window* window, GraphicsSystem* graphics);
 	#endif
-
 
 		~TestApplication();
 

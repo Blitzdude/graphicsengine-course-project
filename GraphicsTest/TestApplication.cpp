@@ -14,11 +14,12 @@
 namespace engine
 {
 #if defined (ANDROID)
-	TestApplication::TestApplication(AAssetManager * manager, Window * window, GraphicsSystem * graphics)
-            : GraphicsApplication(window, graphics)
+	TestApplication::TestApplication( Window * window, GraphicsSystem * graphics, AAssetManager * manager)
+            : GraphicsApplication( window, graphics, manager)
             , m_totalTime(0.0f)
 	{
-
+		LOGI("Starting UP.......................");
+		init();
 	}
 #elif defined(_WIN32)
 	TestApplication::TestApplication(Window* window, GraphicsSystem* graphics)

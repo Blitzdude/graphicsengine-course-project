@@ -65,13 +65,10 @@ namespace engine {
 
 #else
 
-	bool IOManager::readFileToBuffer(AAssetManager* manager, std::string filePath, std::vector<unsigned char>& buffer)
+	bool IOManager::readFileToBuffer(std::string filePath, std::vector<unsigned char>& buffer, AAssetManager* manager)
 	{
     
-        android_app* app;
-        AAssetManager* assetManager = app->activity->assetManager;
-
-		AAsset* asset = AAssetManager_open(assetManager, filePath.c_str(), AASSET_MODE_BUFFER);
+		AAsset* asset = AAssetManager_open(manager, filePath.c_str(), AASSET_MODE_BUFFER);
         if(asset == NULL) {
             LOGI("FILE NOT FOUND");
             return false;
@@ -85,12 +82,10 @@ namespace engine {
         return true;
 	}
 
-    bool IOManager::readFileToBuffer(AAssetManager* manager, std::string filePath, std::string& buffer)
+    bool IOManager::readFileToBuffer(std::string filePath, std::string& buffer, AAssetManager* manager)
     {
-		android_app* app;
-        AAssetManager* assetManager = app->activity->assetManager;
-
-        AAsset* asset = AAssetManager_open(assetManager, filePath.c_str(), AASSET_MODE_BUFFER);
+		
+        AAsset* asset = AAssetManager_open(manager, filePath.c_str(), AASSET_MODE_BUFFER);
         if(asset == NULL) {
             LOGI("FILE NOT FOUND");
             return false;

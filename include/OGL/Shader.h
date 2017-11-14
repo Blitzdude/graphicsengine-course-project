@@ -2,10 +2,13 @@
 #define _SHADER_H_
 
 #include <core/Object.h>
-#include <GLES2\gl2.h>
-#include <core\Ref.h>
-#include <EGL\egl.h>
+#include <GLES2/gl2.h>
+#include <core/Ref.h>
+#include <EGL/egl.h>
 #include <string>
+#if defined (ANDROID)
+#include <android/asset_manager.h>
+#endif
 
 
 namespace engine {
@@ -15,21 +18,22 @@ namespace engine {
 	public:
 
 		Shader(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath);
-
+#if defined (ANDROID)
+		Shader(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, AAssetManager* manager);
+#endif
 		~Shader();
-
+#if defined (_WIN32)
 		void CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath);
-		
+#elif (ANDROID)
+		void CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, AAssetManager* manager );
+#endif
 		void compileShadersFromSource(const char* vertexSource, const char* fragmentSource);
-
 		void compileShader(const char* source, const std::string& name, GLuint id);
-
 		void linkShaders();
 
 		void use();
 
 		void unUse();
-
 		GLuint getUniformLocation(const char* const uniformName);
 
 		// public members

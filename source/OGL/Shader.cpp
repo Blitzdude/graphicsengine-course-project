@@ -1,37 +1,66 @@
 #include "OGL/Shader.h"
-#include <core\Log.h>
+#include <core/Log.h>
 #include <core/IOManager.h>
 #include <fstream>
 
 
 namespace engine {
-
+    #if defined (_WIN32)
 	Shader::Shader(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath)
 	{
 		CreateShaderProgram(vertexShaderFilePath, fragmentShaderFilePath);
 	}
+
+	#elif (ANDROID)
+	Shader::Shader(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, AAssetManager* manager) 
+	{
+		CreateShaderProgram(vertexShaderFilePath, fragmentShaderFilePath, manager);
+	}
+	#endif
 
 	Shader::~Shader()
 	{
 		glDeleteProgram(programId);
 	}
 
+	#if defined (_WIN32)
 	void Shader::CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath)
 	{
 		std::string vertSource;
 		std::string fragSource;
+		if (!IOManager::readFileToBuffer(vertexShaderFilePath, vertSource)) {
+			LOGE("Failed to load vertex shader file");
+		}
 
-		IOManager::readFileToBuffer(vertexShaderFilePath, vertSource);
-		IOManager::readFileToBuffer(fragmentShaderFilePath, fragSource);
+		if (!IOManager::readFileToBuffer(fragmentShaderFilePath, fragSource)) {
+			LOGE("Failed to load fragment shader file");
+		}
 
 		compileShadersFromSource(vertSource.c_str(), fragSource.c_str());
 
 		// link the shaders to the program then detach them
 		linkShaders();
-
 	}
 
-	
+	#elif (ANDROID)
+	void Shader::CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, AAssetManager* manager) {
+		// use asset manager to load on android
+		std::string vertSource;
+		std::string fragSource;
+		if (!IOManager::readFileToBuffer(vertexShaderFilePath, vertSource, manager)) {
+			LOGE("Failed to load vertex shader file");
+		}
+
+		if (!IOManager::readFileToBuffer(fragmentShaderFilePath, fragSource, manager)) {
+			LOGE("Failed to load fragment shader file");
+		}
+
+		compileShadersFromSource(vertSource.c_str(), fragSource.c_str());
+
+		// link the shaders to the program then detach them
+		linkShaders();
+	}
+	#endif
 
 	void Shader::compileShadersFromSource(const char * vertexSource, const char * fragmentSource)
 	{

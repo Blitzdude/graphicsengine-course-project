@@ -41,7 +41,7 @@ int AndroidEngine::initDisplay()
     window = new engine::AndroidWindow(app->window);
     graphics = new engine::OGLGraphicsSystem(window);
     window->setGraphics(graphics);
-    application = new engine::TestApplication(app->activity->assetManager,window,graphics);
+    application = new engine::TestApplication(window, graphics, app->activity->assetManager);
     window->setApplication(application);
     frameTimer = new engine::ElapsedTimer();
     frameTimer->reset();
@@ -164,7 +164,7 @@ void android_main(struct android_app* state)
 {
     struct AndroidEngine engine;
     // Make sure glue isn't stripped.
-    app_dummy();
+    //app_dummy();
 
     memset(&engine, 0, sizeof(engine));
     state->userData = &engine;

@@ -6,6 +6,7 @@
 
 
 #if defined (ANDROID)
+#include <android/asset_manager.h>
 	struct AAsset;
 #endif // 
 namespace engine {
@@ -13,12 +14,12 @@ namespace engine {
 	class IOManager
 	{
 	public:
-#if defined(_WIN32)
+#if !defined(ANDROID)
 		static bool readFileToBuffer(std::string filePath, std::vector<unsigned char>& buffer);
 		static bool readFileToBuffer(std::string filePath, std::string& buffer);
-#elif defined (ANDROID)
-		static bool readFileToBuffer(AAssetManager* manager, std::string filePath, std::vector<unsigned char>& buffer);
-		static bool readFileToBuffer(AAssetManager* manager, std::string filePath, std::string& buffer);
+#else
+		static bool readFileToBuffer( std::string filePath, std::vector<unsigned char>& buffer, AAssetManager* manager );
+		static bool readFileToBuffer( std::string filePath, std::string& buffer, AAssetManager* manager);
 #endif
 	};
 }
