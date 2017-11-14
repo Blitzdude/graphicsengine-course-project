@@ -67,7 +67,6 @@ namespace engine {
 
 	bool IOManager::readFileToBuffer(std::string filePath, std::vector<unsigned char>& buffer, AAssetManager* manager)
 	{
-    
 		AAsset* asset = AAssetManager_open(manager, filePath.c_str(), AASSET_MODE_BUFFER);
         if(asset == NULL) {
             LOGI("FILE NOT FOUND");

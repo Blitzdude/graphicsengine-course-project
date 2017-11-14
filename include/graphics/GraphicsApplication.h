@@ -9,18 +9,25 @@
 
 #include <core/Object.h>
 
+#if defined (ANDROID)
+#include <android/asset_manager.h>
+#endif
+
 namespace engine
 {
 	class Window;
 	class GraphicsSystem;
-	class AAssetManager;
 	
 
 	class GraphicsApplication :
 		public Object
 	{
 	public:
+	#if defined (ANDROID)
 		GraphicsApplication( Window* window, GraphicsSystem* graphics, AAssetManager* manager = nullptr);
+	#elif defined (_WIN32)
+		GraphicsApplication(Window* window, GraphicsSystem* graphics);
+	#endif
 
 		virtual ~GraphicsApplication();
 
@@ -32,10 +39,14 @@ namespace engine
 
 		GraphicsSystem* getGraphicsSystem();
 		Window* getWindow();
+		
+		#if defined (ANDROID)
+		AAssetManager* m_manager;
+		#endif
+
 	private:
 		Window* m_window;
 		GraphicsSystem* m_graphics;
-		AAssetManager* m_manager;
 	};
 
 }

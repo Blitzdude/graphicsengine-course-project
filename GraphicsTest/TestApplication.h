@@ -22,7 +22,6 @@ namespace engine
 {
 	class Window;
 	class GraphicsSystem;
-    class AAssetManager;
 
 	class TestApplication :
 		public GraphicsApplication

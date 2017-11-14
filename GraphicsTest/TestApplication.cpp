@@ -38,8 +38,11 @@ namespace engine
 	void TestApplication::init()
 	{
 		// shader 0 = textured shader
+#if defined (_WIN32)
 		m_shaders.push_back(new Shader("Shaders/VertexShader.vert", "Shaders/FragmentShader.frag"));
-
+#elif (ANDROID)
+		m_shaders.push_back(new Shader("Shaders/VertexShader.vert", "Shaders/FragmentShader.frag", m_manager));
+#endif
 		// Create 2x2 image, 3 bytes per pixel (R, G, B)
 		GLubyte pixels[4 * 3] = 
 		{

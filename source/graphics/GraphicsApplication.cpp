@@ -13,16 +13,22 @@
 
 namespace engine
 {
-
-	GraphicsApplication::GraphicsApplication( Window* window, GraphicsSystem* graphics, AAssetManager* manager /*= nullptr*/)
+#if defined (_WIN32)
+	GraphicsApplication::GraphicsApplication( Window* window, GraphicsSystem* graphics)
+		: Object()
+		, m_window(window)
+		, m_graphics(graphics)
+	{
+	}
+#elif (ANDROID)
+	GraphicsApplication::GraphicsApplication(Window* window, GraphicsSystem* graphics, AAssetManager* manager /*= nullptr*/)
 		: Object()
 		, m_manager(manager)
 		, m_window(window)
 		, m_graphics(graphics)
 	{
 	}
-
-
+#endif
 	GraphicsApplication::~GraphicsApplication()
 	{
 	}

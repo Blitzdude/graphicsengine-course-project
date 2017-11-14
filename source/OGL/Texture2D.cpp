@@ -1,7 +1,7 @@
-#include "OGL\Texture2D.h"
-#include <core\Log.h>
+#include "OGL/Texture2D.h"
+#include <core/Log.h>
 #define STB_IMAGE_IMPLEMENTATION
-#include <core\stb_image.h>
+#include <core/stb_image.h>
 
 namespace engine {
 

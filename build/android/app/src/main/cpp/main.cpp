@@ -38,6 +38,7 @@ struct AndroidEngine
 /// Initialize an EGL context for the current display.
 int AndroidEngine::initDisplay()
 {
+    LOGI("Start initDisplay()");
     window = new engine::AndroidWindow(app->window);
     graphics = new engine::OGLGraphicsSystem(window);
     window->setGraphics(graphics);
@@ -45,6 +46,7 @@ int AndroidEngine::initDisplay()
     window->setApplication(application);
     frameTimer = new engine::ElapsedTimer();
     frameTimer->reset();
+    LOGI("End initDisplay()");
     return 0;
 }
 

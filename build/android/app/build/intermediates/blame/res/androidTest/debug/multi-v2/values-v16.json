@@ -1,51 +1,6 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\joelkan\\Desktop\\UAE2dEngine-repository\\build\\android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v16\\values-v16.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\joelkan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\f19733a8672aab2b657c96af643776df\\res\\values-v16\\values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "C:\\Users\\JoelKan\\Desktop\\xplatform_template\\build\\android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v16\\values-v16.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\JoelKan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a65edcb53bde0ac5a2254150f587fb62\\res\\values-v16\\values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "C:\\Users\\joelkan\\Desktop\\graphicsengine-course-project\\build\\android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v16\\values-v16.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\joelkan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\f19733a8672aab2b657c96af643776df\\res\\values-v16\\values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\JoelKan\\Desktop\\UAE2dEngine-repository\\build\\android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {

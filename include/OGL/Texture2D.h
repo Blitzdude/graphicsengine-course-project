@@ -1,8 +1,8 @@
 #ifndef _TEXTURE2D_H_
 #define _TEXTURE2D_H_
 
-#include "core\Object.h"
-#include "GLES2\gl2.h"
+#include "core/Object.h"
+#include "GLES2/gl2.h"
 #include <string>
 #include <assert.h>
 

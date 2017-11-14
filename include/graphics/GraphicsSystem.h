@@ -11,9 +11,9 @@
 #include <stdint.h>
 #include <string>
 #include <fstream>
-#include <GLES2\gl2.h>
-#include <OGL\Shader.h>
-#include <OGL\Texture2D.h>
+#include <GLES2/gl2.h>
+#include <OGL/Shader.h>
+#include <OGL/Texture2D.h>
 
 namespace engine
 {
