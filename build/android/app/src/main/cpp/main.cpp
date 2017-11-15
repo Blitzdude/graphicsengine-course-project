@@ -2,6 +2,7 @@
 #include <android/sensor.h>
 #include <android/log.h>
 #include <android_native_app_glue.h>
+#include <string.h>
 
 // Engine includes
 #include <OGL/OGLGraphicsSystem.h>

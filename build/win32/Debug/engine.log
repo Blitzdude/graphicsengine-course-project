@@ -1,8 +1,5 @@
 ﻿  Win32Window.cpp
-  Texture2D.cpp
-  Shader.cpp
   OGLGraphicsSystem.cpp
-  OGL.cpp
   Window.cpp
   GraphicsSystem.cpp
   GraphicsApplication.cpp
@@ -10,6 +7,8 @@
   IOManager.cpp
   ElapsedTimer.cpp
   AndroidWindow.cpp
+  Texture2D.cpp
+  Shader.cpp
+  OGL.cpp
   Generating Code...
-cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
   engine.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\engine.lib

@@ -1,5 +1,7 @@
-﻿  TestApplication.cpp
-  win32_main.cpp
+﻿  win32_main.cpp
+  TestApplication.cpp
   Generating Code...
+cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
+  LINK : C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe not found or not built by the last incremental link; performing full link
   GraphicsTest.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
   GraphicsTest.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.pdb (Full PDB)
