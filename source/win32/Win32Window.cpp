@@ -7,11 +7,21 @@
 #include <Win32Window.h>
 #include <graphics/GraphicsApplication.h>
 #include <EGL/eglplatform.h>
+#include <iostream>
 
 namespace engine
 {
 	LRESULT WINAPI WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
+		HDC hdc;                       // handle to device context 
+		RECT windowRect;               // window area rectangle 
+		POINT ptWindowUL;              // window upper left corner
+		POINT ptWindowLR;			   // window lower right corner 
+		static POINTS ptsBegin;        // beginning point 
+		static POINTS ptsEnd;          // new endpoint 
+		static POINTS ptsPrevEnd;      // previous endpoint 
+		static BOOL fPrevLine = FALSE; // previous line flag 
+
 		LRESULT  lRet = 1;
 		switch (uMsg)
 		{
@@ -28,8 +38,10 @@ namespace engine
 		break;
 
 		case WM_DESTROY:
+		{
 			PostQuitMessage(0);
 			break;
+		}
 
 		case WM_CHAR:
 		{
@@ -38,6 +50,107 @@ namespace engine
 			GetCursorPos(&point);
 		}
 		break;
+
+		// Input
+		case WM_LBUTTONDOWN:
+		{
+
+			// Capture mouse input. 
+			static POINT cursor;
+			GetCursorPos(&cursor);
+			ScreenToClient(hWnd, &cursor);
+			printf("MOUSE X: %d MOUSE Y: %d \n", cursor.x, cursor.y);
+
+			// send cursor coordinates to input manager
+
+			SetCapture(hWnd);
+
+			// Retrieve the screen coordinates of the client area, 
+			// and convert them into client coordinates. 
+
+			GetClientRect(hWnd, &windowRect);
+			ptWindowUL.x = windowRect.left;
+			ptWindowUL.y = windowRect.top;
+
+			// Add one to the right and bottom sides, because the 
+			// coordinates retrieved by GetClientRect do not 
+			// include the far left and lowermost pixels. 
+
+			ptWindowLR.x = windowRect.right + 1;
+			ptWindowLR.y = windowRect.bottom + 1;
+			ClientToScreen(hWnd, &ptWindowUL);
+			ClientToScreen(hWnd, &ptWindowLR);
+
+			// Copy the client coordinates of the client area 
+			// to the windowRect structure. Confine the mouse cursor 
+			// to the client area by passing the windowRect structure 
+			// to the ClipCursor function. 
+
+			SetRect(&windowRect, ptWindowUL.x, ptWindowUL.y,
+				ptWindowLR.x, ptWindowLR.y);
+			ClipCursor(&windowRect);
+
+			// Convert the cursor coordinates into a POINTS 
+			// structure, which defines the beginning point of the 
+			// line drawn during a WM_MOUSEMOVE message. 
+
+			ptsBegin = MAKEPOINTS(lParam);
+		}
+			break;
+
+		case WM_MOUSEMOVE:
+			// When moving the mouse, the user must hold down 
+			// the left mouse button to draw lines. 
+			
+			if (wParam & MK_LBUTTON)
+			{
+
+				// Retrieve a device context (DC) for the client area. 
+
+				hdc = GetDC(hWnd);
+
+				// The following function ensures that pixels of 
+				// the previously drawn line are set to white and 
+				// those of the new line are set to black. 
+
+				SetROP2(hdc, R2_NOTXORPEN);
+
+				// If a line was drawn during an earlier WM_MOUSEMOVE 
+				// message, draw over it. This erases the line by 
+				// setting the color of its pixels to white. 
+
+				if (fPrevLine)
+				{
+					MoveToEx(hdc, ptsBegin.x, ptsBegin.y,
+						(LPPOINT)NULL);
+					LineTo(hdc, ptsPrevEnd.x, ptsPrevEnd.y);
+				}
+
+				// Convert the current cursor coordinates to a 
+				// POINTS structure, and then draw a new line. 
+
+				ptsEnd = MAKEPOINTS(lParam);
+				MoveToEx(hdc, ptsBegin.x, ptsBegin.y, (LPPOINT)NULL);
+				LineTo(hdc, ptsEnd.x, ptsEnd.y);
+
+				// Set the previous line flag, save the ending 
+				// point of the new line, and then release the DC. 
+
+				fPrevLine = TRUE;
+				ptsPrevEnd = ptsEnd;
+				ReleaseDC(hWnd, hdc);
+			}
+			break;
+
+		case WM_LBUTTONUP:
+			// The user has finished drawing the line. Reset the 
+			// previous line flag, release the mouse cursor, and 
+			// release the mouse capture. 
+
+			fPrevLine = FALSE;
+			ClipCursor(NULL);
+			ReleaseCapture();
+			return(0);
 
 		default:
 			lRet = DefWindowProc(hWnd, uMsg, wParam, lParam);

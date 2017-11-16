@@ -1,14 +1,2 @@
 ﻿  Win32Window.cpp
-  OGLGraphicsSystem.cpp
-  Window.cpp
-  GraphicsSystem.cpp
-  GraphicsApplication.cpp
-  Object.cpp
-  IOManager.cpp
-  ElapsedTimer.cpp
-  AndroidWindow.cpp
-  Texture2D.cpp
-  Shader.cpp
-  OGL.cpp
-  Generating Code...
   engine.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\engine.lib
