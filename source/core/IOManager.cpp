@@ -12,11 +12,12 @@
 namespace engine {
 
 #if defined(_WIN32)
-    bool IOManager::readFileToBuffer(std::string filePath, std::vector<unsigned char>& buffer)
+    bool IOManager::readFileToBuffer(std::string filePath, std::vector<unsigned char>& buffer, void* manager)
     {
-        std::ifstream file(filePath, std::ios::binary);
-        if (file.fail()) {
-            perror(filePath.c_str());
+        std::ifstream file(filePath, std::ios::binary); // open file
+        if (file.fail()) { // error check
+			LOGI("failed to open %s : ", filePath.c_str());
+          //  perror(filePath.c_str());
             return false;
         }
 
@@ -30,14 +31,14 @@ namespace engine {
         //Reduce the file size by any header bytes that might be present
         fileSize -= (unsigned int)file.tellg();
 
-        buffer.resize(fileSize);
+        buffer.resize(fileSize); // resize the buffer to the size of the file. 
         file.read((char *)&(buffer[0]), fileSize);
         file.close();
 
         return true;
     }
 
-    bool IOManager::readFileToBuffer(std::string filePath, std::string & buffer)
+    bool IOManager::readFileToBuffer(std::string filePath, std::string & buffer, void* manager)
     {
         std::ifstream file(filePath, std::ios::binary);
         if (file.fail()) {
@@ -65,9 +66,9 @@ namespace engine {
 
 #else
 
-	bool IOManager::readFileToBuffer(std::string filePath, std::vector<unsigned char>& buffer, AAssetManager* manager)
+	bool IOManager::readFileToBuffer(std::string filePath, std::vector<unsigned char>& buffer, void* manager)
 	{
-		AAsset* asset = AAssetManager_open(manager, filePath.c_str(), AASSET_MODE_BUFFER);
+		AAsset* asset = AAssetManager_open((AAssetManager*)manager, filePath.c_str(), AASSET_MODE_BUFFER);
         if(asset == NULL) {
             LOGI("FILE NOT FOUND");
             return false;
@@ -77,14 +78,13 @@ namespace engine {
 
         AAsset_close(asset);
 
-
         return true;
 	}
 
-    bool IOManager::readFileToBuffer(std::string filePath, std::string& buffer, AAssetManager* manager)
+    bool IOManager::readFileToBuffer(std::string filePath, std::string& buffer, void* manager)
     {
 		
-        AAsset* asset = AAssetManager_open(manager, filePath.c_str(), AASSET_MODE_BUFFER);
+        AAsset* asset = AAssetManager_open((AAssetManager*)manager, filePath.c_str(), AASSET_MODE_BUFFER);
         if(asset == NULL) {
             LOGI("FILE NOT FOUND");
             return false;

@@ -6,9 +6,6 @@
 #include <core/Ref.h>
 #include <EGL/egl.h>
 #include <string>
-#if defined (ANDROID)
-#include <android/asset_manager.h>
-#endif
 
 
 namespace engine {
@@ -17,16 +14,12 @@ namespace engine {
 	{
 	public:
 
-		Shader(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath);
-#if defined (ANDROID)
-		Shader(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, AAssetManager* manager);
-#endif
+		
+		Shader(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, void* manager);
+
 		~Shader();
-#if defined (_WIN32)
-		void CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath);
-#elif (ANDROID)
-		void CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, AAssetManager* manager );
-#endif
+		void CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, void* manager);
+
 		void compileShadersFromSource(const char* vertexSource, const char* fragmentSource);
 		void compileShader(const char* source, const std::string& name, GLuint id);
 		void linkShaders();

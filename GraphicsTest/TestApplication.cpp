@@ -13,23 +13,14 @@
 
 namespace engine
 {
-#if defined (ANDROID)
-	TestApplication::TestApplication( Window * window, GraphicsSystem * graphics, AAssetManager * manager)
-            : GraphicsApplication( window, graphics, manager)
+	TestApplication::TestApplication( Window * window, GraphicsSystem * graphics, void * manager)
+            : GraphicsApplication(window, graphics)
+			, m_assetManager(manager)
             , m_totalTime(0.0f)
 	{
 		LOGI("Starting UP.......................");
 		init();
 	}
-#elif defined(_WIN32)
-	TestApplication::TestApplication(Window* window, GraphicsSystem* graphics)
-		: GraphicsApplication(window, graphics)
-		, m_totalTime(0.0f)
-	{
-		LOGI("Starting UP.......................");
-		init();
-	}
-#endif
 
 	TestApplication::~TestApplication()
 	{
@@ -38,11 +29,9 @@ namespace engine
 	void TestApplication::init()
 	{
 		// shader 0 = textured shader
-#if defined (_WIN32)
-		m_shaders.push_back(new Shader("Shaders/VertexShader.vert", "Shaders/FragmentShader.frag"));
-#elif (ANDROID)
-		m_shaders.push_back(new Shader("Shaders/VertexShader.vert", "Shaders/FragmentShader.frag", m_manager));
-#endif
+
+		m_shaders.push_back(new Shader("Shaders/VertexShader.vert", "Shaders/FragmentShader.frag", m_assetManager));
+
 		// Create 2x2 image, 3 bytes per pixel (R, G, B)
 		GLubyte pixels[4 * 3] = 
 		{
@@ -85,7 +74,7 @@ namespace engine
 	void TestApplication::render(Window* window, GraphicsSystem* graphics)
 	{
 		float xVal = cosf(2.0f*m_totalTime) / 3.0f;
-		float yVal = sinf(2.0f*m_totalTime) / 3.0f;
+		float yVal = 0.0f;//sinf(2.0f*m_totalTime) / 3.0f;
 
 		// Triangles vertex coordinates;
 		float size = 1.0f;

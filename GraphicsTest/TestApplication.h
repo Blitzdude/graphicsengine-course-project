@@ -23,15 +23,12 @@ namespace engine
 	class Window;
 	class GraphicsSystem;
 
+
 	class TestApplication :
 		public GraphicsApplication
 	{
 	public:
-	#if defined (ANDROID)
-			TestApplication(Window* window, GraphicsSystem* graphics, AAssetManager* manager);
-	#elif defined (_WIN32)
-			TestApplication(Window* window, GraphicsSystem* graphics);
-	#endif
+		TestApplication(Window* window, GraphicsSystem* graphics, void* manager = nullptr);
 
 		~TestApplication();
 
@@ -47,6 +44,7 @@ namespace engine
 		float						m_totalTime;
 		std::vector<Shader*>		m_shaders;
 		std::vector<Texture2D*>		m_textures;
+		void* 						m_assetManager;
 	};
 
 }

@@ -5,18 +5,10 @@
 
 
 namespace engine {
-    #if defined (_WIN32)
-	Shader::Shader(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath)
-	{
-		CreateShaderProgram(vertexShaderFilePath, fragmentShaderFilePath);
-	}
-
-	#elif (ANDROID)
-	Shader::Shader(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, AAssetManager* manager) 
+	Shader::Shader(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, void* manager) 
 	{
 		CreateShaderProgram(vertexShaderFilePath, fragmentShaderFilePath, manager);
 	}
-	#endif
 
 	Shader::~Shader()
 	{
@@ -24,15 +16,15 @@ namespace engine {
 	}
 
 	#if defined (_WIN32)
-	void Shader::CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath)
+	void Shader::CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, void* manager)
 	{
 		std::string vertSource;
 		std::string fragSource;
-		if (!IOManager::readFileToBuffer(vertexShaderFilePath, vertSource)) {
+		if (!IOManager::readFileToBuffer(vertexShaderFilePath, vertSource, manager)) {
 			LOGE("Failed to load vertex shader file");
 		}
 
-		if (!IOManager::readFileToBuffer(fragmentShaderFilePath, fragSource)) {
+		if (!IOManager::readFileToBuffer(fragmentShaderFilePath, fragSource, manager)) {
 			LOGE("Failed to load fragment shader file");
 		}
 
@@ -43,7 +35,7 @@ namespace engine {
 	}
 
 	#elif (ANDROID)
-	void Shader::CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, AAssetManager* manager) {
+	void Shader::CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, void* manager) {
 		// use asset manager to load on android
 		std::string vertSource;
 		std::string fragSource;
@@ -152,11 +144,13 @@ namespace engine {
 	void Shader::use()
 	{
 		glUseProgram(programId);
+		// todo bind attributes
 	}
 
 	void Shader::unUse()
 	{
 		glUseProgram(0);
+		// todo unbind attributes
 	}
 	GLuint Shader::getUniformLocation(const char * const uniformName)
 	{

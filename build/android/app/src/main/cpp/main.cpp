@@ -104,8 +104,6 @@ int32_t AndroidEngine::onInput(struct android_app* app, AInputEvent* event)
             break;
     }
 
-
-
     return 0;
 }
 
