@@ -40,6 +40,8 @@ namespace engine
 		/// Renders application.
 		virtual void render(Window* window, GraphicsSystem* graphics);
 
+		virtual void processInput(Window* window);
+
 	private:
 		float						m_totalTime;
 		std::vector<Shader*>		m_shaders;

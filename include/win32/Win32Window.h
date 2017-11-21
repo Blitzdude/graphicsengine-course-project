@@ -8,6 +8,7 @@
 #define _ENGINE_WIN32WINDOW_H_
 
 #include <graphics/Window.h>
+#include <core/InputManager.h>
 #include <windows.h>
 #include <string>
 

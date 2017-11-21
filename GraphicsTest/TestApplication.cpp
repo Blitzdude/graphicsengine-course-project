@@ -73,24 +73,32 @@ namespace engine
 	bool TestApplication::update(float deltaTime)
 	{
 		m_totalTime += deltaTime;
+		processInput(getWindow());
 		return true;
 	}
 
 
 	void TestApplication::render(Window* window, GraphicsSystem* graphics)
 	{
-		float xVal = cosf(2.0f*m_totalTime) / 3.0f;
-		float yVal = 0.0f;//sinf(2.0f*m_totalTime) / 3.0f;
+		auto input = window->getInputManager();
+
+		float xVal = input->getMouseX();
+		float yVal = input->getMouseY();
+
+		// convert to NDC
+
 
 		// Triangles vertex coordinates;
 		float size = 1.0f;
-		float dx = -0.5f + xVal;
-		float dy = -0.5f + yVal;
+		float dx = xVal / window->getWidth() - 0.5f;
+		float dy = yVal / window->getHeight() - 0.5f;
 		float depth = 0.0f;
+
 		GLfloat quad[] = {
 			dx + 0.0f, dy + size, depth, //vertex 0
 			dx + 0.0f, dy + 0.0f, depth, //vertex 1
 			dx + size, dy + 0.0f, depth, //vertex 2
+
 			dx + size, dy + size, depth, //vertex 3
 			dx + size, dy + 0.0f, depth, //vertex 4
 			dx + 0.0f, dy + size, depth  //vertex 5
@@ -120,6 +128,21 @@ namespace engine
 
 		// switch secondary buffer to be displayed on screen. 
 		graphics->swapBuffers();
+	}
+
+	void TestApplication::processInput(Window* window)
+	{
+		
+
+		float mX = window->getInputManager()->getMouseX();
+		float mY = window->getInputManager()->getMouseY();
+
+		if ((mX < window->getWidth() && mX > 0) &&
+			(mY < window->getHeight() && mY > 0))
+		{
+			LOGI("MouseX: %f MouseY: %f \n", mX, mY);
+		}
+
 	}
 
 }

@@ -52,15 +52,24 @@ namespace engine
 		m_graphics = graphics;
 	}
 
+	void Window::setInputManager(InputManager* inputManager)
+	{
+		m_inputManager = inputManager;
+	}
+
 
 	GraphicsApplication* Window::getApplication() const
 	{
 		return m_app;
 	}
 
-
 	GraphicsSystem* Window::getGraphics() const
 	{
 		return m_graphics;
+	}
+
+	InputManager * Window::getInputManager() const
+	{
+		return m_inputManager;
 	}
 }

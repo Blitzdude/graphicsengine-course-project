@@ -3,12 +3,12 @@
 #include <vector>
 #include <string>
 #include "Log.h"
-
+#include <core/InputManager.h>
 
 
 namespace engine {
 
-	class IOManager
+	class IOManager : public Object
 	{
 	public:
 		static bool readFileToBuffer(std::string filePath, std::vector<unsigned char>& buffer, void* manager);

@@ -1,17 +1,6 @@
 ﻿  Win32Window.cpp
-  OGLGraphicsSystem.cpp
-  Window.cpp
-  GraphicsSystem.cpp
-  GraphicsApplication.cpp
-  Object.cpp
-  InputManager.cpp
-  IOManager.cpp
-c:\users\joelkan\desktop\uae2dengine-repository\source\core\iomanager.cpp(15): warning C4100: 'manager': unreferenced formal parameter
-c:\users\joelkan\desktop\uae2dengine-repository\source\core\iomanager.cpp(41): warning C4100: 'manager': unreferenced formal parameter
-  ElapsedTimer.cpp
-  AndroidWindow.cpp
-  Texture2D.cpp
-  Shader.cpp
-  OGL.cpp
-  Generating Code...
-  engine.vcxproj -> C:\Users\joelkan\Desktop\UAE2dEngine-repository\build\win32\Debug\engine.lib
+c:\users\joelkan\desktop\uae2dengine-repository\source\win32\win32window.cpp(16): warning C4101: 'hdc': unreferenced local variable
+c:\users\joelkan\desktop\uae2dengine-repository\source\win32\win32window.cpp(19): warning C4101: 'ptWindowLR': unreferenced local variable
+c:\users\joelkan\desktop\uae2dengine-repository\source\win32\win32window.cpp(18): warning C4101: 'ptWindowUL': unreferenced local variable
+c:\users\joelkan\desktop\uae2dengine-repository\source\win32\win32window.cpp(17): warning C4101: 'windowRect': unreferenced local variable
+  engine.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\engine.lib

@@ -27,6 +27,9 @@ int main(int argc, char* argv[]) {
 	window->setGraphics(graphics); // Set graphics for window
 	engine::Ref<engine::GraphicsApplication> application = new engine::TestApplication(window, graphics);
 	window->setApplication(application); // Set application for window
+
+	engine::Ref<engine::InputManager> inputManager = new engine::InputManager(); 
+	window->setInputManager(inputManager); // Set the input manager for window
 	
 	engine::ElapsedTimer frameTimer;
 	frameTimer.reset();
