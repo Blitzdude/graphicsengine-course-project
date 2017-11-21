@@ -68,7 +68,15 @@ namespace engine {
 
 	bool IOManager::readFileToBuffer(std::string filePath, std::vector<unsigned char>& buffer, void* manager)
 	{
-		AAsset* asset = AAssetManager_open((AAssetManager*)manager, filePath.c_str(), AASSET_MODE_BUFFER);
+        // make sure the manager is not nullptr
+
+        if (manager == nullptr) {
+            LOGE("manager does not exists!");
+        }
+
+		AAssetManager* mgr = static_cast<AAssetManager*>(manager);
+
+		AAsset* asset = AAssetManager_open(mgr, filePath.c_str(), AASSET_MODE_BUFFER);
         if(asset == NULL) {
             LOGI("FILE NOT FOUND");
             return false;
@@ -83,8 +91,13 @@ namespace engine {
 
     bool IOManager::readFileToBuffer(std::string filePath, std::string& buffer, void* manager)
     {
-		
-        AAsset* asset = AAssetManager_open((AAssetManager*)manager, filePath.c_str(), AASSET_MODE_BUFFER);
+        if (manager == nullptr) {
+            LOGE("manager does not exists!");
+        }
+
+        AAssetManager* mgr = static_cast<AAssetManager*>(manager);
+
+        AAsset* asset = AAssetManager_open(mgr, filePath.c_str(), AASSET_MODE_BUFFER);
         if(asset == NULL) {
             LOGI("FILE NOT FOUND");
             return false;

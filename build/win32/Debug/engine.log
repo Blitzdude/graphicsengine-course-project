@@ -1,6 +1,17 @@
-﻿  IOManager.cpp
+﻿  Win32Window.cpp
+  OGLGraphicsSystem.cpp
+  Window.cpp
+  GraphicsSystem.cpp
+  GraphicsApplication.cpp
+  Object.cpp
+  InputManager.cpp
+  IOManager.cpp
 c:\users\joelkan\desktop\uae2dengine-repository\source\core\iomanager.cpp(15): warning C4100: 'manager': unreferenced formal parameter
 c:\users\joelkan\desktop\uae2dengine-repository\source\core\iomanager.cpp(41): warning C4100: 'manager': unreferenced formal parameter
+  ElapsedTimer.cpp
+  AndroidWindow.cpp
+  Texture2D.cpp
   Shader.cpp
+  OGL.cpp
   Generating Code...
   engine.vcxproj -> C:\Users\joelkan\Desktop\UAE2dEngine-repository\build\win32\Debug\engine.lib

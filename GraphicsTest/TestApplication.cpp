@@ -4,12 +4,13 @@
 /// can do whatever you want with this stuff. If we meet some day, and you think
 /// this stuff is worth it, you can buy me a beer in return. Mikko Romppainen.
 /// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-#include <TestApplication.h>
 
 #include <graphics/GraphicsSystem.h>
 #include <graphics/Window.h>
 #include <math.h>
+#include <core/IOManager.h>
 
+#include "TestApplication.h"
 
 namespace engine
 {
@@ -19,6 +20,11 @@ namespace engine
             , m_totalTime(0.0f)
 	{
 		LOGI("Starting UP.......................");
+#if defined (ANDROID)
+        std::string testRead;
+        IOManager::readFileToBuffer("test.txt", testRead, manager);
+        LOGI("%s", testRead.c_str());
+#endif
 		init();
 	}
 
