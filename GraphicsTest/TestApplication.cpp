@@ -19,12 +19,8 @@ namespace engine
 			, m_assetManager(manager)
             , m_totalTime(0.0f)
 	{
-		LOGI("Starting UP.......................");
-#if defined (ANDROID)
-        std::string testRead;
-        IOManager::readFileToBuffer("test.txt", testRead, manager);
-        LOGI("%s", testRead.c_str());
-#endif
+		LOGI("Starting UP...");
+
 		init();
 	}
 

@@ -39,15 +39,13 @@ struct AndroidEngine
 /// Initialize an EGL context for the current display.
 int AndroidEngine::initDisplay()
 {
-    LOGI("Start initDisplay()");
     window = new engine::AndroidWindow(app->window);
     graphics = new engine::OGLGraphicsSystem(window);
     window->setGraphics(graphics);
-    application = new engine::TestApplication(window, graphics, app->activity->assetManager);
+    application = new engine::TestApplication(window,graphics, app->activity->assetManager);
     window->setApplication(application);
     frameTimer = new engine::ElapsedTimer();
     frameTimer->reset();
-    LOGI("End initDisplay()");
     return 0;
 }
 
@@ -104,6 +102,8 @@ int32_t AndroidEngine::onInput(struct android_app* app, AInputEvent* event)
             break;
     }
 
+
+
     return 0;
 }
 
@@ -115,44 +115,44 @@ void AndroidEngine::onCmd(struct android_app* app, int32_t cmd)
     struct AndroidEngine* engine = (struct AndroidEngine*)app->userData;
     switch (cmd)
     {
-    case APP_CMD_SAVE_STATE:
-        break;
+        case APP_CMD_SAVE_STATE:
+            break;
 
-    // The window is being shown, get it ready.
-    case APP_CMD_INIT_WINDOW:
-        if (engine->app->window != NULL)
-        {
-            engine->initDisplay();
+            // The window is being shown, get it ready.
+        case APP_CMD_INIT_WINDOW:
+            if (engine->app->window != NULL)
+            {
+                engine->initDisplay();
+                engine->drawFrame();
+            }
+            break;
+
+            // The window is being hidden or closed, clean it up.
+        case APP_CMD_TERM_WINDOW:
+            engine->deinitDisplay();
+            break;
+
+            // When our app gains focus, we start monitoring the accelerometer.
+        case APP_CMD_GAINED_FOCUS:
+            if (engine->accelerometerSensor != NULL)
+            {
+                ASensorEventQueue_enableSensor(engine->sensorEventQueue, engine->accelerometerSensor);
+                // We'd like to get 60 events per second (in us).
+                ASensorEventQueue_setEventRate(engine->sensorEventQueue, engine->accelerometerSensor, (1000L/60)*1000);
+            }
+            break;
+
+            // When our app loses focus, we stop monitoring the accelerometer
+            // This is to avoid consuming battery while not being used.
+        case APP_CMD_LOST_FOCUS:
+
+            if (engine->accelerometerSensor != NULL)
+            {
+                ASensorEventQueue_disableSensor(engine->sensorEventQueue, engine->accelerometerSensor);
+            }
+
             engine->drawFrame();
-        }
-        break;
-
-    // The window is being hidden or closed, clean it up.
-    case APP_CMD_TERM_WINDOW:
-        engine->deinitDisplay();
-        break;
-
-    // When our app gains focus, we start monitoring the accelerometer.
-    case APP_CMD_GAINED_FOCUS:
-        if (engine->accelerometerSensor != NULL)
-        {
-            ASensorEventQueue_enableSensor(engine->sensorEventQueue, engine->accelerometerSensor);
-            // We'd like to get 60 events per second (in us).
-            ASensorEventQueue_setEventRate(engine->sensorEventQueue, engine->accelerometerSensor, (1000L/60)*1000);
-        }
-        break;
-
-    // When our app loses focus, we stop monitoring the accelerometer
-    // This is to avoid consuming battery while not being used.
-    case APP_CMD_LOST_FOCUS:
-
-        if (engine->accelerometerSensor != NULL)
-        {
-            ASensorEventQueue_disableSensor(engine->sensorEventQueue, engine->accelerometerSensor);
-        }
-
-        engine->drawFrame();
-        break;
+            break;
     }
 }
 
@@ -163,9 +163,10 @@ void AndroidEngine::onCmd(struct android_app* app, int32_t cmd)
 /// event loop for receiving input events and doing other things.
 void android_main(struct android_app* state)
 {
+    LOGI("Starting android main");
     struct AndroidEngine engine;
     // Make sure glue isn't stripped.
-    //app_dummy();
+    app_dummy();
 
     memset(&engine, 0, sizeof(engine));
     state->userData = &engine;

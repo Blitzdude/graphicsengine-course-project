@@ -21,12 +21,16 @@ namespace engine {
 		std::string vertSource;
 		std::string fragSource;
 		if (!IOManager::readFileToBuffer(vertexShaderFilePath, vertSource, manager)) {
-			LOGE("Failed to load vertex shader file");
+			LOGE("Failed to load vertex shader file\n\n");
 		}
 
+		LOGI("%s\n\n", vertSource.c_str());
+
 		if (!IOManager::readFileToBuffer(fragmentShaderFilePath, fragSource, manager)) {
-			LOGE("Failed to load fragment shader file");
+			LOGE("Failed to load fragment shader file\n\n");
 		}
+
+		LOGI("%s\n\n", fragSource.c_str());
 
 		compileShadersFromSource(vertSource.c_str(), fragSource.c_str());
 
@@ -43,9 +47,13 @@ namespace engine {
 			LOGE("Failed to load vertex shader file");
 		}
 
+		LOGI("vertSource:\n %s\n\n", vertSource.c_str());
+
 		if (!IOManager::readFileToBuffer(fragmentShaderFilePath, fragSource, manager)) {
 			LOGE("Failed to load fragment shader file");
 		}
+
+		LOGI("fragSource:\n %s\n\n", fragSource.c_str());
 
 		compileShadersFromSource(vertSource.c_str(), fragSource.c_str());
 
