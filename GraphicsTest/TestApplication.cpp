@@ -19,7 +19,7 @@ namespace engine
 			, m_assetManager(manager)
             , m_totalTime(0.0f)
 	{
-		LOGI("Starting UP...");
+		LOGI("Starting UP...\n");
 
 		init();
 	}
@@ -136,7 +136,7 @@ namespace engine
 		if ((mX < window->getWidth() && mX > 0) &&
 			(mY < window->getHeight() && mY > 0))
 		{
-			LOGI("MouseX: %f MouseY: %f \n", mX, mY);
+			LOGI("MouseX: %f MouseY: %f \r", mX, mY);
 		}
 
 	}

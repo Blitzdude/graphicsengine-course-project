@@ -15,52 +15,32 @@ namespace engine {
 		glDeleteProgram(programId);
 	}
 
-	#if defined (_WIN32)
 	void Shader::CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, void* manager)
 	{
+
 		std::string vertSource;
 		std::string fragSource;
-		if (!IOManager::readFileToBuffer(vertexShaderFilePath, vertSource, manager)) {
-			LOGE("Failed to load vertex shader file\n\n");
+
+
+        LOGI("Loading vertex shader\n");
+        if (!IOManager::readFileToBuffer(vertexShaderFilePath, vertSource, manager)) {
+			LOGE("Failed to load vertex shader file\n");
 		}
 
-		LOGI("%s\n\n", vertSource.c_str());
+		LOGI("%s\n\n\n\n", vertSource.c_str());
 
+        LOGI("Loading fragment shader\n");
 		if (!IOManager::readFileToBuffer(fragmentShaderFilePath, fragSource, manager)) {
-			LOGE("Failed to load fragment shader file\n\n");
+			LOGE("Failed to load fragment shader file\n");
 		}
 
-		LOGI("%s\n\n", fragSource.c_str());
+		LOGI("%s\n\n\n\n", fragSource.c_str());
 
 		compileShadersFromSource(vertSource.c_str(), fragSource.c_str());
 
 		// link the shaders to the program then detach them
 		linkShaders();
 	}
-
-	#elif (ANDROID)
-	void Shader::CreateShaderProgram(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, void* manager) {
-		// use asset manager to load on android
-		std::string vertSource;
-		std::string fragSource;
-		if (!IOManager::readFileToBuffer(vertexShaderFilePath, vertSource, manager)) {
-			LOGE("Failed to load vertex shader file");
-		}
-
-		LOGI("vertSource:\n %s\n\n", vertSource.c_str());
-
-		if (!IOManager::readFileToBuffer(fragmentShaderFilePath, fragSource, manager)) {
-			LOGE("Failed to load fragment shader file");
-		}
-
-		LOGI("fragSource:\n %s\n\n", fragSource.c_str());
-
-		compileShadersFromSource(vertSource.c_str(), fragSource.c_str());
-
-		// link the shaders to the program then detach them
-		linkShaders();
-	}
-	#endif
 
 	void Shader::compileShadersFromSource(const char * vertexSource, const char * fragmentSource)
 	{
@@ -122,7 +102,7 @@ namespace engine {
 
 		//Note the different functions here: glGetProgram* instead of glGetShader*.
 		GLint isLinked = 0;
-		glGetProgramiv(programId, GL_LINK_STATUS, (int *)&isLinked);
+		glGetProgramiv(programId, GL_LINK_STATUS, &isLinked);
 		if (isLinked == GL_FALSE)
 		{
 			GLint maxLength = 0;
@@ -162,7 +142,7 @@ namespace engine {
 	}
 	GLuint Shader::getUniformLocation(const char * const uniformName)
 	{
-		return glGetUniformLocation(programId, uniformName);
+		return (GLuint)glGetUniformLocation(programId, uniformName);
 	}
 }
 

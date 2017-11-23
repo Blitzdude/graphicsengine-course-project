@@ -1,3 +1,4 @@
+#version 100
 attribute vec4 vPosition;
 attribute vec2 vTexCoord;
 varying vec2 texCoord;

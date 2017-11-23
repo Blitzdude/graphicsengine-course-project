@@ -103,12 +103,12 @@ namespace engine
 		eglQuerySurface(m_eglDisplay, m_eglSurface, EGL_HEIGHT, &h);
 		window->setSize(w,h);
 
-		LOGI("OpenGL information:");
-		LOGI("  GL_VENDOR: %s", glGetString(GL_VENDOR));
-		LOGI("  GL_RENDERER: %s", glGetString(GL_RENDERER));
-		LOGI("  GL_VERSION: %s", glGetString(GL_VERSION));
-		LOGI("  GL_EXTENSIONS: %s", glGetString(GL_EXTENSIONS));
-		LOGI("Surface size: %dx%d", w, h);
+		LOGI("OpenGL information:\n");
+		LOGI("  GL_VENDOR: %s\n", glGetString(GL_VENDOR));
+		LOGI("  GL_RENDERER: %s\n", glGetString(GL_RENDERER));
+		LOGI("  GL_VERSION: %s\n", glGetString(GL_VERSION));
+		LOGI("  GL_EXTENSIONS: %s\n", glGetString(GL_EXTENSIONS));
+		LOGI("Surface size: %dx%d\n", w, h);
 		
 		// initialize shaders and such
 		
