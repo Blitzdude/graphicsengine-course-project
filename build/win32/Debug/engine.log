@@ -1,2 +1,8 @@
-﻿  OGLGraphicsSystem.cpp
-  engine.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\engine.lib
+﻿  Shader.cpp
+  Generating Code...
+  Compiling...
+  IOManager.cpp
+c:\users\joelkan\desktop\uae2dengine-repository\source\core\iomanager.cpp(15): warning C4100: 'manager': unreferenced formal parameter
+c:\users\joelkan\desktop\uae2dengine-repository\source\core\iomanager.cpp(41): warning C4100: 'manager': unreferenced formal parameter
+  Generating Code...
+  engine.vcxproj -> C:\Users\joelkan\Desktop\UAE2dEngine-repository\build\win32\Debug\engine.lib

@@ -32,6 +32,9 @@ namespace engine
 	{
 		// shader 0 = textured shader
 
+        //this is file reading test
+
+
 		m_shaders.push_back(new Shader("Shaders/VertexShader.vert", "Shaders/FragmentShader.frag", m_assetManager));
 
 		// Create 2x2 image, 3 bytes per pixel (R, G, B)
@@ -60,6 +63,10 @@ namespace engine
 			255, 255, 255,	// white
 			255, 255, 255	// white
 		};
+
+        std::string testString;
+        IOManager::readFileToBuffer("test.txt", testString, m_assetManager);
+        LOGI("%s\n", testString.c_str());
 
 		m_textures.push_back(new Texture2D(2, 2, 3, pixels));			// 0
 		m_textures.push_back(new Texture2D(4, 3, 3, finnishPixels));	// 1

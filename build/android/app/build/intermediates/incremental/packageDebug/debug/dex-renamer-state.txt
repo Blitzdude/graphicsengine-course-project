@@ -1,4 +1,4 @@
-#Thu Nov 23 11:34:40 EET 2017
-base.0=C\:\\Users\\JoelKan\\Desktop\\UAE2dEngine-repository\\build\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Fri Nov 24 10:49:33 EET 2017
+base.0=C\:\\Users\\joelkan\\Desktop\\UAE2dEngine-repository\\build\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

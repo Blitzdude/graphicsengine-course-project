@@ -76,8 +76,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\android\AndroidWindow.h" />
+    <ClInclude Include="..\..\include\core\ElapsedTimer.h" />
     <ClInclude Include="..\..\include\core\InputManager.h" />
     <ClInclude Include="..\..\include\core\IOManager.h" />
+    <ClInclude Include="..\..\include\core\Log.h" />
     <ClInclude Include="..\..\include\core\Object.h" />
     <ClInclude Include="..\..\include\core\Ref.h" />
     <ClInclude Include="..\..\include\graphics\GraphicsApplication.h" />
@@ -109,6 +111,7 @@
   <ItemGroup>
     <None Include="..\..\include\core\Ref.inl" />
     <None Include="ClassDiagram3.cd" />
+    <None Include="UAE2DEngineDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

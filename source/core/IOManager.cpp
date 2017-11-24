@@ -86,23 +86,25 @@ namespace engine {
 
         // holds size of searched file
         off64_t length = AAsset_getLength64(asset);
+        LOGI("Asset Length: %d\n", (int)length );
         // keep track of remaining bytes to read
         off64_t remaining = AAsset_getRemainingLength64(asset);
-        size_t Kb512 = 1024 * 512; // 512 Kb is maximum chunk size for compressed assets
+        LOGI("Bytes to read: %d\n", (int)remaining);
+        size_t Mb = 1024 * 1000; // 1 Mb is maximum chunk size for compressed assets
         size_t currChunk;
-        buffer.reserve(length);
+        buffer.reserve((unsigned long)length);
 
         // while we have data to read
         while (remaining != 0)
         {
             // set proper size for our next chunk
-            if (remaining >= Kb512)
+            if (remaining >= Mb)
             {
-                currChunk = Kb512;
+                currChunk = Mb;
             }
             else
             {
-                currChunk = remaining;
+                currChunk = (size_t)remaining;
             }
             unsigned char chunk[currChunk];
 
@@ -112,6 +114,7 @@ namespace engine {
                 // and append it to our string/vector
                 buffer.insert(buffer.end(), chunk, chunk + currChunk);
                 remaining = AAsset_getRemainingLength64(asset);
+                LOGI("Bytes to read: %d\n", (int)remaining);
             }
         }
         AAsset_close(asset);
@@ -135,9 +138,11 @@ namespace engine {
 
         // holds size of searched file
         off64_t length = AAsset_getLength64(asset);
+        LOGI("Asset Length: %d\n", length );
         // keep track of remaining bytes to read
         off64_t remaining = AAsset_getRemainingLength64(asset);
-        size_t Kb512 = 1024 * 512; // 512 Kb is maximum chunk size for compressed assets
+        LOGI("Bytes to read: %d\n", remaining);
+        size_t Mb = 1000 *1024; // 1 Mb is maximum chunk size for compressed assets
         size_t currChunk;
         buffer.reserve(length);
 
@@ -145,9 +150,9 @@ namespace engine {
         while (remaining != 0)
         {
             // set proper size for our next chunk
-            if (remaining >= Kb512)
+            if (remaining >= Mb)
             {
-                currChunk = Kb512;
+                currChunk = Mb;
             }
             else
             {
@@ -161,6 +166,7 @@ namespace engine {
                 // and append it to our string/vector
                 buffer.insert(buffer.end(), chunk, chunk + currChunk);
                 remaining = AAsset_getRemainingLength64(asset);
+                LOGI("Bytes to read: %d\n", remaining);
             }
         }
 

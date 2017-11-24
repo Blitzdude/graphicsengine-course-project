@@ -84,6 +84,12 @@
     <ClInclude Include="..\..\include\core\InputManager.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\core\ElapsedTimer.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\Log.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\ogl\OGLGraphicsSystem.cpp">
@@ -131,5 +137,8 @@
       <Filter>Header Files\core</Filter>
     </None>
     <None Include="ClassDiagram3.cd" />
+    <None Include="UAE2DEngineDiagram.cd">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
