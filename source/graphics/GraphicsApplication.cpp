@@ -21,7 +21,7 @@ namespace engine
 	{
 	}
 #elif (ANDROID)
-	GraphicsApplication::GraphicsApplication(Window* window, GraphicsSystem* graphics, AAssetManager* manager /*= nullptr*/)
+	GraphicsApplication::GraphicsApplication(Window* window, GraphicsSystem* graphics, void* manager /*= nullptr*/)
 		: Object()
 		, m_manager(manager)
 		, m_window(window)

@@ -70,7 +70,7 @@ namespace engine
 
 		m_textures.push_back(new Texture2D(2, 2, 3, pixels));			// 0
 		m_textures.push_back(new Texture2D(4, 3, 3, finnishPixels));	// 1
-		m_textures.push_back(new Texture2D(4, 3, 4, "test.png"));		// 2
+		m_textures.push_back(new Texture2D(4, 3, 4, "test.png", m_assetManager));		// 2
 	}
 
 	bool TestApplication::update(float deltaTime)

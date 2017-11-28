@@ -11,11 +11,11 @@ namespace engine {
 	class Texture2D : public Object {
 	public:
 		Texture2D(int width, int height, int bytesPerPixel, const GLubyte* pixels);
-		Texture2D(int width, int height, int bytesPerPixel, std::string source);
+		Texture2D(int width, int height, int bytesPerPixel, std::string source, void* manager);
 		~Texture2D();
 
 		GLuint createSimpleTexture2D(int width, int height, int bytesPerPixel, const GLubyte* pixels);
-		GLuint createTexture2D(int width, int height, int bytesPerPixel, std::string source);
+		GLuint createTexture2D(int width, int height, int bytesPerPixel, std::string source, void* manager);
 
 		// getters
 		const GLuint& getTextureId() const { return m_textureId; };

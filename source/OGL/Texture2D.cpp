@@ -1,24 +1,34 @@
 #include "OGL/Texture2D.h"
+#include "core/IOManager.h"
+
+#if defined(ANDROID)
+
+#include <android/asset_manager.h>
+#include <android/log.h>
+#include <android_native_app_glue.h>
+#include <malloc.h>
+#endif
+
 #include <core/Log.h>
 #define STB_IMAGE_IMPLEMENTATION
 #include <core/stb_image.h>
 
 namespace engine {
-
 	Texture2D::Texture2D(int width, int height, int bytesPerPixel, const GLubyte* pixels) : Object(), m_textureId(0)
 	{
 		m_textureId = createSimpleTexture2D(width, height, bytesPerPixel, pixels);
 	}
 
-	Texture2D::Texture2D(int width, int height, int bytesPerPixel, std::string source) : Object(), m_textureId(0)
+	Texture2D::Texture2D(int width, int height, int bytesPerPixel, std::string source, void* manager) : Object(), m_textureId(0)
 	{
-		m_textureId = createTexture2D(width, height, bytesPerPixel, source);
+		m_textureId = createTexture2D(width, height, bytesPerPixel, source,  manager);
 	}
 
 	Texture2D::~Texture2D()
 	{
 		// TODO: delete texture on exit
 	}
+
 
 	GLuint Texture2D::createSimpleTexture2D(int width, int height, int bytesPerPixel, const GLubyte* pixels)
 	{
@@ -42,17 +52,14 @@ namespace engine {
 		return texId;
 	}
 
-	GLuint Texture2D::createTexture2D(int width, int height, int bytesPerPixel, std::string source)
+	#if defined (_WIN32)
+	GLuint Texture2D::createTexture2D(int width, int height, int bytesPerPixel, std::string source, void* manager)
 	{
 		// load texture file
 		GLuint texId;
-		unsigned char* image = stbi_load(source.c_str(), &width, &height, &bytesPerPixel, STBI_rgb_alpha);
-	//	assert(bytesPerPixel == 3 || bytesPerPixel == 4); // make sure bytes per pixel is correct
-														  // use tightly packed data
-		if (image == nullptr)
-			LOGE("Couldn't open test.png");
-		assert(image != nullptr);
 
+		unsigned char* image = stbi_load(source.c_str(), &width, &height, &bytesPerPixel, STBI_rgb_alpha);
+	
 		// Generate texture object
 		glGenTextures(1, &texId);
 		// bind the texture object
@@ -68,4 +75,33 @@ namespace engine {
 		stbi_image_free(image);
 		return texId;
 	}
+
+	#elif (ANDROID)
+	GLuint Texture2D::createTexture2D(int width, int height, int bytesPerPixel, std::string source, void* manager)
+	{
+		GLuint texId;
+
+		// make sure the manager is not nullptr
+		if (manager == nullptr)
+		{
+			LOGE("manager does not exists!");
+		}
+
+		AAssetManager* mgr = static_cast<AAssetManager*>(manager);
+
+		AAsset* asset;
+		asset = AAssetManager_open(mgr, source.c_str(), AASSET_MODE_BUFFER);
+		if (asset == nullptr)
+			LOGE("Asset not found %s", source.c_str());
+
+		off_t assetLength = AAsset_getLength(asset);
+		unsigned char* bufferPoint = new unsigned char[assetLength];
+
+		AAsset_read(asset, bufferPoint, (size_t)assetLength);
+
+		stbi_uc* bmpRead = stbi_load_from_memory(bufferPoint, assetLength, &width, &height, &bytesPerPixel, STBI_rgb_alpha)
+
+		AAsset_close(asset);
+	}
+	#endif
 }
