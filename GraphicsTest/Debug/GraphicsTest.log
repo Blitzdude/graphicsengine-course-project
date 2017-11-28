@@ -1,6 +1,5 @@
-﻿  TestApplication.cpp
-  win32_main.cpp
+﻿  win32_main.cpp
+  TestApplication.cpp
   Generating Code...
-cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
-  GraphicsTest.vcxproj -> C:\Users\joelkan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
-  GraphicsTest.vcxproj -> C:\Users\joelkan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.pdb (Full PDB)
+  GraphicsTest.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
+  GraphicsTest.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.pdb (Full PDB)

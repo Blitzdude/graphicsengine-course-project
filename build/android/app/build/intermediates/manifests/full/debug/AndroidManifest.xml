@@ -16,7 +16,8 @@
         android:fullBackupContent="false"
         android:hasCode="false"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name" >
+        android:label="@string/app_name"
+        android:testOnly="true" >
 
         <!--
          Our activity is the built-in NativeActivity framework class.
@@ -25,7 +26,9 @@
         <activity
             android:name="android.app.NativeActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
 
             <!-- Tell NativeActivity the name of our .so -->
             <meta-data

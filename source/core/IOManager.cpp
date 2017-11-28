@@ -11,6 +11,7 @@
 #endif
 namespace engine {
 
+
 #if defined(_WIN32)
     bool IOManager::readFileToBuffer(std::string filePath, std::vector<unsigned char>& buffer, void* manager)
     {
@@ -138,10 +139,10 @@ namespace engine {
 
         // holds size of searched file
         off64_t length = AAsset_getLength64(asset);
-        LOGI("Asset Length: %d\n", length );
+        LOGI("Asset Length: %lu\n", length );
         // keep track of remaining bytes to read
         off64_t remaining = AAsset_getRemainingLength64(asset);
-        LOGI("Bytes to read: %d\n", remaining);
+        LOGI("Bytes to read: %lu\n", remaining);
         size_t Mb = 1000 *1024; // 1 Mb is maximum chunk size for compressed assets
         size_t currChunk;
         buffer.reserve(length);
@@ -156,7 +157,7 @@ namespace engine {
             }
             else
             {
-                currChunk = remaining;
+                currChunk = (size_t)remaining;
             }
             unsigned char chunk[currChunk];
 
@@ -166,7 +167,7 @@ namespace engine {
                 // and append it to our string/vector
                 buffer.insert(buffer.end(), chunk, chunk + currChunk);
                 remaining = AAsset_getRemainingLength64(asset);
-                LOGI("Bytes to read: %d\n", remaining);
+                LOGI("Bytes to read: %lu\n", remaining);
             }
         }
 

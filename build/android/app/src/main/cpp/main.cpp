@@ -14,6 +14,7 @@
 /// Shared state for our app.
 struct AndroidEngine
 {
+
     struct android_app* app;
 
     ASensorManager* sensorManager;
@@ -24,7 +25,7 @@ struct AndroidEngine
     engine::Ref<engine::GraphicsApplication> application;
     engine::Ref<engine::Window> window;
     engine::Ref<engine::ElapsedTimer> frameTimer;
-
+    engine::Ref<engine::InputManager> inputManager;
 
     int initDisplay();
     void drawFrame();
@@ -40,10 +41,12 @@ struct AndroidEngine
 int AndroidEngine::initDisplay()
 {
     window = new engine::AndroidWindow(app->window);
+    inputManager = new engine::InputManager();
     graphics = new engine::OGLGraphicsSystem(window);
     window->setGraphics(graphics);
-    application = new engine::TestApplication(window,graphics, app->activity->assetManager);
+    application = new engine::TestApplication(window,graphics,app->activity->assetManager);
     window->setApplication(application);
+    window->setInputManager(inputManager);
     frameTimer = new engine::ElapsedTimer();
     frameTimer->reset();
     return 0;
@@ -87,7 +90,9 @@ int32_t AndroidEngine::onInput(struct android_app* app, AInputEvent* event)
                 int pointerId = AMotionEvent_getPointerId(event, i);
                 float x = AMotionEvent_getX(event, i);
                 float y = AMotionEvent_getY(event, i);
+
                 // TODO: send pointerId, x, y to the input system;
+                engine->window->getInputManager()->setMouseCoords(x,y);
             }
         }
             return 1;

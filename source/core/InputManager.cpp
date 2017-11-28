@@ -1,4 +1,5 @@
-#include "core\InputManager.h"
+
+#include "core/InputManager.h"
 
 namespace engine {
 

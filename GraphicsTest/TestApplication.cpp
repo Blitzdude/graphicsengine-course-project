@@ -14,7 +14,7 @@
 
 namespace engine
 {
-	TestApplication::TestApplication( Window * window, GraphicsSystem * graphics, void * manager)
+	TestApplication::TestApplication( Window * window, GraphicsSystem * graphics, void * manager /* = nullptr */)
             : GraphicsApplication(window, graphics)
 			, m_assetManager(manager)
             , m_totalTime(0.0f)
@@ -64,37 +64,34 @@ namespace engine
 			255, 255, 255	// white
 		};
 
-        std::string testString;
-        IOManager::readFileToBuffer("test.txt", testString, m_assetManager);
-        LOGI("%s\n", testString.c_str());
 
-		m_textures.push_back(new Texture2D(2, 2, 3, pixels));			// 0
-		m_textures.push_back(new Texture2D(4, 3, 3, finnishPixels));	// 1
-		m_textures.push_back(new Texture2D(4, 3, 4, "test.png", m_assetManager));		// 2
+		m_textures.push_back(new Texture2D(2, 2, 3, pixels));			            // 0
+		m_textures.push_back(new Texture2D(4, 3, 3, finnishPixels));	            // 1
+		m_textures.push_back(new Texture2D(4, 3, 4, "test.png", m_assetManager));	// 2
+        m_textures.push_back(new Texture2D(1, 3, 4, "mr_t.png",m_assetManager));    // 3
 	}
 
 	bool TestApplication::update(float deltaTime)
 	{
 		m_totalTime += deltaTime;
-		processInput(getWindow());
+		//processInput(getWindow());
 		return true;
 	}
 
 
 	void TestApplication::render(Window* window, GraphicsSystem* graphics)
 	{
+        // this comment was done in visual studio
 		auto input = window->getInputManager();
-
-		float xVal = input->getMouseX();
-		float yVal = input->getMouseY();
-
-		// convert to NDC
-
+		float xVal, yVal;
+		xVal = (input->getMouseX() / window->getWidth()) - 1.0f;
+		
+		yVal = ((input->getMouseY() / window->getHeight()) - 1.0f);
 
 		// Triangles vertex coordinates;
 		float size = 1.0f;
-		float dx = xVal / window->getWidth() - 0.5f;
-		float dy = yVal / window->getHeight() - 0.5f;
+		float dx = xVal;
+		float dy = yVal;
 		float depth = 0.0f;
 
 		GLfloat quad[] = {
@@ -127,7 +124,7 @@ namespace engine
 		// set OpenGL drawing window display to entire window.
 		glViewport(0, 0, window->getWidth(), window->getHeight());
 	
-		graphics->drawTriangles(m_shaders[0], m_textures[2], quad, textureCoordinates, 6);
+		graphics->drawTriangles(m_shaders[0], m_textures[3], quad, textureCoordinates, 6);
 
 		// switch secondary buffer to be displayed on screen. 
 		graphics->swapBuffers();
@@ -136,7 +133,7 @@ namespace engine
 	void TestApplication::processInput(Window* window)
 	{
 		
-
+		
 		float mX = window->getInputManager()->getMouseX();
 		float mY = window->getInputManager()->getMouseY();
 
@@ -145,6 +142,7 @@ namespace engine
 		{
 			LOGI("MouseX: %f MouseY: %f \r", mX, mY);
 		}
+	
 
 	}
 

@@ -14,9 +14,7 @@
 #include <OGL/Texture2D.h>
 #include <vector>
 
-#if defined (ANDROID)
-#include <android/asset_manager.h>
-#endif
+
 
 namespace engine
 {

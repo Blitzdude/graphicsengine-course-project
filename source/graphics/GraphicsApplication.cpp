@@ -11,24 +11,19 @@
 #include <math.h> // sinf
 #include <random>
 
+#if defined (ANDROID)
+#include <android/asset_manager.h>
+#endif
+
 namespace engine
 {
-#if defined (_WIN32)
 	GraphicsApplication::GraphicsApplication( Window* window, GraphicsSystem* graphics)
 		: Object()
 		, m_window(window)
 		, m_graphics(graphics)
 	{
 	}
-#elif (ANDROID)
-	GraphicsApplication::GraphicsApplication(Window* window, GraphicsSystem* graphics, void* manager /*= nullptr*/)
-		: Object()
-		, m_manager(manager)
-		, m_window(window)
-		, m_graphics(graphics)
-	{
-	}
-#endif
+
 	GraphicsApplication::~GraphicsApplication()
 	{
 	}

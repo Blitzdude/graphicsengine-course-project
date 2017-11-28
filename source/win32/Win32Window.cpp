@@ -66,7 +66,6 @@ namespace engine
 			// get window context 
 			Win32Window *window = (Win32Window*)(LONG_PTR)GetWindowLongPtr(hWnd, GWL_USERDATA);
 
-			
 			// Capture mouse input. 
 
 			static POINT cursor;

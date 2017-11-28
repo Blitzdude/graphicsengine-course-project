@@ -65,7 +65,7 @@ namespace engine {
 		// bind the texture object
 		glBindTexture(GL_TEXTURE_2D, texId);
 		// load texture
-		GLuint fmt = bytesPerPixel == 3 ? GL_RGB : GL_RGBA; // format is either RGB or RGBA depeding on bid depth
+		GLuint fmt = bytesPerPixel == 3 ? GL_RGB : GL_RGBA; // format is either RGB or RGBA depending on bit depth
 		glTexImage2D(GL_TEXTURE_2D, 0, fmt, width, height, 0, fmt, GL_UNSIGNED_BYTE, image);
 
 		// set filtering mode
@@ -99,9 +99,25 @@ namespace engine {
 
 		AAsset_read(asset, bufferPoint, (size_t)assetLength);
 
-		stbi_uc* bmpRead = stbi_load_from_memory(bufferPoint, assetLength, &width, &height, &bytesPerPixel, STBI_rgb_alpha)
+		int stb_fmt = bytesPerPixel == 3 ? STBI_rgb : STBI_rgb_alpha; // format is either RGB or RGBA depending on bit depth
+		stbi_uc* image = stbi_load_from_memory(bufferPoint, (int)assetLength, &width, &height, &bytesPerPixel, stb_fmt);
 
 		AAsset_close(asset);
+
+        // Generate texture object
+        glGenTextures(1, &texId);
+        // bind the texture object
+        glBindTexture(GL_TEXTURE_2D, texId);
+        // load texture
+        GLuint fmt = bytesPerPixel == 3 ? GL_RGB : GL_RGBA; // format is either RGB or RGBA depending on bit depth
+        glTexImage2D(GL_TEXTURE_2D, 0, fmt, width, height, 0, fmt, GL_UNSIGNED_BYTE, image);
+
+        // set filtering mode
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+        stbi_image_free(image);
+        return texId;
 	}
 	#endif
 }
