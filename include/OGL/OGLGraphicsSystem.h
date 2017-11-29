@@ -38,8 +38,9 @@ namespace engine
 									float textureCoordinates[],
 									int numVertices);
 
-		virtual void drawTriangles(	Shader* shader,
+		virtual void drawSprite(	Shader* shader,
 									Texture2D* texture,
+									glm::mat4 mvp,
 									float vertices[],
 									float textureCoordinates[],
 									int numVertices);

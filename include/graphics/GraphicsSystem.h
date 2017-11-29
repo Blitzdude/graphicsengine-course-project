@@ -15,6 +15,10 @@
 #include <OGL/Shader.h>
 #include <OGL/Texture2D.h>
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 namespace engine
 {
 	class GraphicsSystem :
@@ -36,8 +40,9 @@ namespace engine
 									float textureCoordinates[],
 									int numVertices) = 0; 
 
-		virtual void drawTriangles(	Shader* shader,
+		virtual void drawSprite(	Shader* shader,
 									Texture2D* texture,
+									glm::mat4 mvp,
 									float vertices[],
 									float textureCoordinates[],
 									int numVertices) = 0;

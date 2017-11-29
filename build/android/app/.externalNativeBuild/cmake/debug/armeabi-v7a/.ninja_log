@@ -39,3 +39,13 @@
 56	1159	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/GraphicsTest/TestApplication.cpp.o	4419511f49f6953b
 65	1181	0	CMakeFiles/native-activity.dir/main.cpp.o	995a2bf2558beb80
 1181	1543	0	C:/Users/JoelKan/Desktop/UAE2dEngine-repository/build/android/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-activity.so	fb63aae7cdbf3678
+45	1137	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/source/graphics/Window.cpp.o	bce09edb8b7ff75
+23	1151	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/source/core/InputManager.cpp.o	8f77027b6c992aaf
+2	1159	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/source/android/AndroidWindow.cpp.o	bb213e63d11e6492
+7	1260	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/source/OGL/OGLGraphicsSystem.cpp.o	92ed3d8338288ecb
+10	1279	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/source/graphics/GraphicsApplication.cpp.o	d49aea642662d8b0
+16	1378	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/source/core/IOManager.cpp.o	ef1ed6fa1e81aeee
+35	1385	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/GraphicsTest/TestApplication.cpp.o	4419511f49f6953b
+56	1481	0	CMakeFiles/native-activity.dir/main.cpp.o	995a2bf2558beb80
+12	1813	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/source/OGL/Texture2D.cpp.o	9f2081e3f91c5c3
+1813	2177	0	C:/Users/JoelKan/Desktop/UAE2dEngine-repository/build/android/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-activity.so	fb63aae7cdbf3678

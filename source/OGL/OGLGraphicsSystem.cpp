@@ -162,10 +162,13 @@ namespace engine
 
 	}
 
-	void OGLGraphicsSystem::drawTriangles(Shader * shader, Texture2D * texture, float vertices[], float textureCoordinates[], int numVertices)
+	void OGLGraphicsSystem::drawSprite(Shader * shader, Texture2D * texture, glm::mat4 mvp, float vertices[], float textureCoordinates[], int numVertices)
 	{
-		// Bind shader
+		// Use shader program
 		shader->use();
+
+		GLuint mvpLoc = shader->getUniformLocation("MVP");
+		glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, glm::value_ptr(mvp));
 
 		// Set positions
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, vertices);

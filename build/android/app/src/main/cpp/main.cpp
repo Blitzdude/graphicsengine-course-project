@@ -40,13 +40,14 @@ struct AndroidEngine
 /// Initialize an EGL context for the current display.
 int AndroidEngine::initDisplay()
 {
-    window = new engine::AndroidWindow(app->window);
-    inputManager = new engine::InputManager();
-    graphics = new engine::OGLGraphicsSystem(window);
+    window = new engine::AndroidWindow(app->window);    // create window
+    inputManager = new engine::InputManager();          // create InputManager
+    graphics = new engine::OGLGraphicsSystem(window);   // create graphics
     window->setGraphics(graphics);
-    application = new engine::TestApplication(window,graphics,app->activity->assetManager);
     window->setApplication(application);
     window->setInputManager(inputManager);
+    // create testApplication
+    application = new engine::TestApplication(window, graphics, inputManager, app->activity->assetManager);
     frameTimer = new engine::ElapsedTimer();
     frameTimer->reset();
     return 0;

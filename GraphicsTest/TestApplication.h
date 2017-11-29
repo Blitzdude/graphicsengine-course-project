@@ -12,8 +12,12 @@
 #include <GLES2/gl2.h>
 #include <OGL/Shader.h>
 #include <OGL/Texture2D.h>
-#include <vector>
+#include <core/InputManager.h>
 
+#include <vector>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 
 namespace engine
@@ -26,7 +30,7 @@ namespace engine
 		public GraphicsApplication
 	{
 	public:
-		TestApplication(Window* window, GraphicsSystem* graphics, void* manager = nullptr);
+		TestApplication(Window* window, GraphicsSystem* graphics, InputManager* inputMgr, void* manager = nullptr);
 
 		~TestApplication();
 
@@ -41,10 +45,18 @@ namespace engine
 		virtual void processInput(Window* window);
 
 	private:
+		
+
 		float						m_totalTime;
 		std::vector<Shader*>		m_shaders;
 		std::vector<Texture2D*>		m_textures;
 		void* 						m_assetManager;
+		InputManager*				m_inputManager;
+
+		// matrix calculation test
+		glm::mat4					m_view;
+		glm::mat4					m_projection;
+		glm::mat4					m_model;
 	};
 
 }

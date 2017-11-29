@@ -9,13 +9,15 @@
 #include <graphics/Window.h>
 #include <math.h>
 #include <core/IOManager.h>
+#include <glm/glm.hpp>
 
 #include "TestApplication.h"
 
 namespace engine
 {
-	TestApplication::TestApplication( Window * window, GraphicsSystem * graphics, void * manager /* = nullptr */)
+	TestApplication::TestApplication( Window * window, GraphicsSystem * graphics, InputManager* inputMgr, void * manager /* = nullptr */)
             : GraphicsApplication(window, graphics)
+			, m_inputManager(inputMgr)
 			, m_assetManager(manager)
             , m_totalTime(0.0f)
 	{
@@ -30,11 +32,7 @@ namespace engine
 
 	void TestApplication::init()
 	{
-		// shader 0 = textured shader
-
-        //this is file reading test
-
-
+		
 		m_shaders.push_back(new Shader("Shaders/VertexShader.vert", "Shaders/FragmentShader.frag", m_assetManager));
 
 		// Create 2x2 image, 3 bytes per pixel (R, G, B)
@@ -74,7 +72,19 @@ namespace engine
 	bool TestApplication::update(float deltaTime)
 	{
 		m_totalTime += deltaTime;
-		//processInput(getWindow());
+		processInput(getWindow());
+
+		// calculate matrices
+		// Translation
+		m_model = glm::translate(glm::mat4(1.0f), glm::vec3(1.0f, 1.f, 0.0f));
+		// Rotation
+		m_model = glm::rotate(m_model, 0.0f, glm::vec3(0.0f, 0.0f, 1.0f));
+		// scale
+		m_model = glm::scale(m_model, glm::vec3(1.0f, 1.0f, 1.0f));
+
+		m_view = glm::mat4(1.0f);
+		m_projection = glm::ortho(0.0f, 8.0f, 6.0f, 0.0f);
+
 		return true;
 	}
 
@@ -82,11 +92,10 @@ namespace engine
 	void TestApplication::render(Window* window, GraphicsSystem* graphics)
 	{
         // this comment was done in visual studio
-		auto input = window->getInputManager();
 		float xVal, yVal;
-		xVal = (input->getMouseX() / window->getWidth()) - 1.0f;
+		xVal = (m_inputManager->getMouseX() / window->getWidth()) - 1.0f;
 		
-		yVal = ((input->getMouseY() / window->getHeight()) - 1.0f);
+		yVal = (m_inputManager->getMouseY() / window->getHeight()) - 1.0f;
 
 		// Triangles vertex coordinates;
 		float size = 1.0f;
@@ -124,7 +133,11 @@ namespace engine
 		// set OpenGL drawing window display to entire window.
 		glViewport(0, 0, window->getWidth(), window->getHeight());
 	
-		graphics->drawTriangles(m_shaders[0], m_textures[3], quad, textureCoordinates, 6);
+		// set MVP
+		glm::mat4 mvp = m_projection * glm::inverse(m_view) * m_model;
+
+		graphics->drawSprite(m_shaders[0], m_textures[3], mvp, quad, textureCoordinates, 6);
+		
 
 		// switch secondary buffer to be displayed on screen. 
 		graphics->swapBuffers();
@@ -133,17 +146,14 @@ namespace engine
 	void TestApplication::processInput(Window* window)
 	{
 		
-		
-		float mX = window->getInputManager()->getMouseX();
-		float mY = window->getInputManager()->getMouseY();
+		float mX = m_inputManager->getMouseX();
+		float mY = m_inputManager->getMouseY();
 
 		if ((mX < window->getWidth() && mX > 0) &&
 			(mY < window->getHeight() && mY > 0))
 		{
 			LOGI("MouseX: %f MouseY: %f \r", mX, mY);
 		}
-	
-
 	}
 
 }

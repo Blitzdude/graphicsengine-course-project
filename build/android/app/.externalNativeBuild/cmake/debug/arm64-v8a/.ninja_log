@@ -84,3 +84,17 @@
 6	742	0	CMakeFiles/native-activity.dir/main.cpp.o	8136814deec40ca9
 2	753	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/GraphicsTest/TestApplication.cpp.o	695e48cd99b0f85d
 753	1090	0	C:/Users/JoelKan/Desktop/UAE2dEngine-repository/build/android/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-activity.so	48f29190bc25b7ba
+30	892	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/source/core/InputManager.cpp.o	a1b5a04276298f15
+43	967	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/source/graphics/Window.cpp.o	694e466280188e5a
+3	1124	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/source/android/AndroidWindow.cpp.o	c983a85341398ddf
+8	1228	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/source/OGL/OGLGraphicsSystem.cpp.o	6018159d99b84c4
+12	1339	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/source/graphics/GraphicsApplication.cpp.o	d4d0f47b71a2fdcb
+38	1356	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/GraphicsTest/TestApplication.cpp.o	695e48cd99b0f85d
+24	1374	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/source/core/IOManager.cpp.o	a7b31e7101658191
+17	1514	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/source/OGL/Texture2D.cpp.o	8d680589c2857e5d
+4	667	0	CMakeFiles/native-activity.dir/main.cpp.o	8136814deec40ca9
+667	1078	0	C:/Users/JoelKan/Desktop/UAE2dEngine-repository/build/android/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-activity.so	48f29190bc25b7ba
+3	665	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/GraphicsTest/TestApplication.cpp.o	695e48cd99b0f85d
+665	998	0	C:/Users/JoelKan/Desktop/UAE2dEngine-repository/build/android/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-activity.so	48f29190bc25b7ba
+4	706	0	CMakeFiles/native-activity.dir/C_/Users/JoelKan/Desktop/UAE2dEngine-repository/GraphicsTest/TestApplication.cpp.o	695e48cd99b0f85d
+706	1038	0	C:/Users/JoelKan/Desktop/UAE2dEngine-repository/build/android/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-activity.so	48f29190bc25b7ba

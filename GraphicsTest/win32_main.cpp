@@ -20,16 +20,17 @@ int main(int argc, char* argv[]) {
 	LOGI("Application create window (%d, %d)\n", w, h );
 	//fopen(stdout);
 
-	engine::Ref<engine::Win32Window> window = new engine::Win32Window( w, h, L"Engine test application" );
+	engine::Ref<engine::Win32Window> window = new engine::Win32Window( w, h, L"Engine test application" );	// create window
 
-	engine::Ref<engine::OGLGraphicsSystem> graphics = new engine::OGLGraphicsSystem(window);
+	engine::Ref<engine::OGLGraphicsSystem> graphics = new engine::OGLGraphicsSystem(window); // create graphics
+	window->setGraphics(graphics);															 // Set graphics for window
 	
-	window->setGraphics(graphics); // Set graphics for window
-	engine::Ref<engine::GraphicsApplication> application = new engine::TestApplication(window, graphics);
+	engine::Ref<engine::InputManager> inputManager = new engine::InputManager();			 // create inputManager
+	window->setInputManager(inputManager);													// Set the input manager for window
+	
+	engine::Ref<engine::GraphicsApplication> application = new engine::TestApplication(window, graphics, inputManager);
 	window->setApplication(application); // Set application for window
 
-	engine::Ref<engine::InputManager> inputManager = new engine::InputManager(); 
-	window->setInputManager(inputManager); // Set the input manager for window
 	
 	engine::ElapsedTimer frameTimer;
 	frameTimer.reset();
