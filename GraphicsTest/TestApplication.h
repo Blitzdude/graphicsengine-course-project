@@ -13,6 +13,7 @@
 #include <OGL/Shader.h>
 #include <OGL/Texture2D.h>
 #include <core/InputManager.h>
+#include <core/Camera2D.h>
 
 #include <vector>
 #include <glm/glm.hpp>
@@ -52,11 +53,8 @@ namespace engine
 		std::vector<Texture2D*>		m_textures;
 		void* 						m_assetManager;
 		InputManager*				m_inputManager;
+		Camera2D*					m_camera;
 
-		// matrix calculation test
-		glm::mat4					m_view;
-		glm::mat4					m_projection;
-		glm::mat4					m_model;
 	};
 
 }

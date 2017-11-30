@@ -27,13 +27,20 @@ namespace engine {
 		void use();
 
 		void unUse();
+
+		void addAttribute(const std::string& attributeName);
+		
 		GLuint getUniformLocation(const char* const uniformName);
 
+		void dispose();
+		
 		// public members
-		GLuint vertexShaderId;
-		GLuint fragmentShaderId;
+	private:
+		GLuint m_vertexShaderId;
+		GLuint m_fragmentShaderId;
 
-		GLuint programId;
+		GLuint m_programId;
+		int m_numAttributes;
 
 	};
 

@@ -76,12 +76,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\android\AndroidWindow.h" />
+    <ClInclude Include="..\..\include\core\Camera2D.h" />
     <ClInclude Include="..\..\include\core\ElapsedTimer.h" />
     <ClInclude Include="..\..\include\core\InputManager.h" />
     <ClInclude Include="..\..\include\core\IOManager.h" />
     <ClInclude Include="..\..\include\core\Log.h" />
     <ClInclude Include="..\..\include\core\Object.h" />
     <ClInclude Include="..\..\include\core\Ref.h" />
+    <ClInclude Include="..\..\include\core\ResourceManager.h" />
     <ClInclude Include="..\..\include\graphics\GraphicsApplication.h" />
     <ClInclude Include="..\..\include\graphics\GraphicsSystem.h" />
     <ClInclude Include="..\..\include\graphics\Window.h" />
@@ -95,10 +97,12 @@
     <ClCompile Include="..\..\source\android\AndroidWindow.cpp">
       <FileType>Text</FileType>
     </ClCompile>
+    <ClCompile Include="..\..\source\core\Camera2D.cpp" />
     <ClCompile Include="..\..\source\core\ElapsedTimer.cpp" />
     <ClCompile Include="..\..\source\core\InputManager.cpp" />
     <ClCompile Include="..\..\source\core\IOManager.cpp" />
     <ClCompile Include="..\..\source\core\Object.cpp" />
+    <ClCompile Include="..\..\source\core\ResourceManager.cpp" />
     <ClCompile Include="..\..\source\graphics\GraphicsApplication.cpp" />
     <ClCompile Include="..\..\source\graphics\GraphicsSystem.cpp" />
     <ClCompile Include="..\..\source\graphics\Window.cpp" />

@@ -54,11 +54,6 @@ namespace engine
 		EGLContext m_eglContext; // Context object
 		EGLSurface m_eglSurface; // Surface object
 
-		// opengle ids
-		GLuint m_vertexShaderID;
-		GLuint m_fragmentShaderID;
-
-
 	};
 
 }

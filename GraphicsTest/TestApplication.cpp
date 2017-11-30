@@ -67,6 +67,12 @@ namespace engine
 		m_textures.push_back(new Texture2D(4, 3, 3, finnishPixels));	            // 1
 		m_textures.push_back(new Texture2D(4, 3, 4, "test.png", m_assetManager));	// 2
         m_textures.push_back(new Texture2D(1, 3, 4, "mr_t.png",m_assetManager));    // 3
+
+		// create camera and initilize it
+		m_camera = new Camera2D();
+		m_camera->init(getWindow()->getWidth(), getWindow()->getHeight());
+
+
 	}
 
 	bool TestApplication::update(float deltaTime)
@@ -74,17 +80,8 @@ namespace engine
 		m_totalTime += deltaTime;
 		processInput(getWindow());
 
-		// calculate matrices
-		// Translation
-		m_model = glm::translate(glm::mat4(1.0f), glm::vec3(1.0f, 1.f, 0.0f));
-		// Rotation
-		m_model = glm::rotate(m_model, 0.0f, glm::vec3(0.0f, 0.0f, 1.0f));
-		// scale
-		m_model = glm::scale(m_model, glm::vec3(1.0f, 1.0f, 1.0f));
-
-		m_view = glm::mat4(1.0f);
-		m_projection = glm::ortho(0.0f, 8.0f, 6.0f, 0.0f);
-
+		m_camera->update();
+		
 		return true;
 	}
 
@@ -132,11 +129,7 @@ namespace engine
 
 		// set OpenGL drawing window display to entire window.
 		glViewport(0, 0, window->getWidth(), window->getHeight());
-	
-		// set MVP
-		glm::mat4 mvp = m_projection * glm::inverse(m_view) * m_model;
 
-		graphics->drawSprite(m_shaders[0], m_textures[3], mvp, quad, textureCoordinates, 6);
 		
 
 		// switch secondary buffer to be displayed on screen. 
