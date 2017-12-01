@@ -33,8 +33,7 @@ namespace engine {
 
 		compileShadersFromSource(vertSource.c_str(), fragSource.c_str());
 
-		// link the shaders to the program then detach them
-		linkShaders();
+		// we do not want to link the shaders yet if we need to add attributes
 	}
 
 	void Shader::compileShadersFromSource(const char * vertexSource, const char * fragmentSource)

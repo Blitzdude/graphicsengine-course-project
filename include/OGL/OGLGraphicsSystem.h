@@ -11,7 +11,13 @@
 #include <core/Ref.h>
 #include <EGL/egl.h>
 #include <OGL/Shader.h>
-#include <OGL/Texture2D.h>
+#include <vector>
+
+/*
+* OGLGraphicsSystem is responsible for 
+* - compiling and linking shader programs
+* - holds a vector of shaderPrograms to use
+*/
 
 namespace engine
 {
@@ -31,19 +37,10 @@ namespace engine
 
 		virtual void swapBuffers();
 	
+		virtual void createNewShader(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, void* manager);
 
-		// draw functions
-		virtual void drawTriangles(	Shader* shader,
-									float vertices[],
-									float textureCoordinates[],
-									int numVertices);
-
-		virtual void drawSprite(	Shader* shader,
-									Texture2D* texture,
-									glm::mat4 mvp,
-									float vertices[],
-									float textureCoordinates[],
-									int numVertices);
+		virtual Shader* getShader(int index);
+	
 
 	private:
 		engine::Ref<Window> m_window;	// Window where graphics is binded
@@ -54,6 +51,7 @@ namespace engine
 		EGLContext m_eglContext; // Context object
 		EGLSurface m_eglSurface; // Surface object
 
+		std::vector<Shader*> m_shaders;
 	};
 
 }

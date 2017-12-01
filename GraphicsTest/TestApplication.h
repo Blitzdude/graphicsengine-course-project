@@ -11,9 +11,9 @@
 #include <core/Log.h>
 #include <GLES2/gl2.h>
 #include <OGL/Shader.h>
-#include <OGL/Texture2D.h>
 #include <core/InputManager.h>
 #include <core/Camera2D.h>
+#include <core/SpriteBatch.h>
 
 #include <vector>
 #include <glm/glm.hpp>
@@ -36,6 +36,7 @@ namespace engine
 		~TestApplication();
 
 		void init();
+		void initShaders();
 
 		/// Updates application. Returns true, if application is running.
 		virtual bool update(float deltaTime);
@@ -49,11 +50,10 @@ namespace engine
 		
 
 		float						m_totalTime;
-		std::vector<Shader*>		m_shaders;
-		std::vector<Texture2D*>		m_textures;
 		void* 						m_assetManager;
 		InputManager*				m_inputManager;
 		Camera2D*					m_camera;
+		SpriteBatch*				m_spriteBatch;
 
 	};
 

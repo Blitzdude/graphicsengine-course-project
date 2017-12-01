@@ -75,9 +75,6 @@
     <ClInclude Include="..\..\include\OGL\Shader.h">
       <Filter>Header Files\OGL</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\OGL\Texture2D.h">
-      <Filter>Header Files\OGL</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\include\core\IOManager.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
@@ -96,6 +93,21 @@
     <ClInclude Include="..\..\include\core\ResourceManager.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\OGL\ImageLoader.h">
+      <Filter>Header Files\OGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\Texture2D.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\TextureCache.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\core\SpriteBatch.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\graphics\Vertex.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\ogl\OGLGraphicsSystem.cpp">
@@ -111,9 +123,6 @@
       <Filter>Source Files\android</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\OGL\Shader.cpp">
-      <Filter>Source Files\OGL</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\OGL\Texture2D.cpp">
       <Filter>Source Files\OGL</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\core\IOManager.cpp">
@@ -141,6 +150,15 @@
       <Filter>Source Files\core</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\core\ResourceManager.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\OGL\ImageLoader.cpp">
+      <Filter>Source Files\OGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\core\TextureCache.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\core\SpriteBatch.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
   </ItemGroup>

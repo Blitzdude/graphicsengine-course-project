@@ -1,7 +1,3 @@
 ﻿  TestApplication.cpp
-  Generating Code...
-  Compiling...
-  win32_main.cpp
-  Generating Code...
-  GraphicsTest.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
-  GraphicsTest.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.pdb (Full PDB)
+c:\users\joelkan\desktop\graphicsengine-course-project\include\graphics\graphicssystem.h(39): warning C4141: 'virtual': used more than once
+  GraphicsTest.vcxproj -> C:\Users\joelkan\Desktop\graphicsengine-course-project\build\win32\Debug\GraphicsTest.exe

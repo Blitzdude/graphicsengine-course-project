@@ -84,13 +84,17 @@
     <ClInclude Include="..\..\include\core\Object.h" />
     <ClInclude Include="..\..\include\core\Ref.h" />
     <ClInclude Include="..\..\include\core\ResourceManager.h" />
+    <ClInclude Include="..\..\include\core\SpriteBatch.h" />
+    <ClInclude Include="..\..\include\core\TextureCache.h" />
     <ClInclude Include="..\..\include\graphics\GraphicsApplication.h" />
     <ClInclude Include="..\..\include\graphics\GraphicsSystem.h" />
+    <ClInclude Include="..\..\include\graphics\Texture2D.h" />
+    <ClInclude Include="..\..\include\graphics\Vertex.h" />
     <ClInclude Include="..\..\include\graphics\Window.h" />
     <ClInclude Include="..\..\include\OGL\OGL.h" />
     <ClInclude Include="..\..\include\OGL\OGLGraphicsSystem.h" />
     <ClInclude Include="..\..\include\OGL\Shader.h" />
-    <ClInclude Include="..\..\include\OGL\Texture2D.h" />
+    <ClInclude Include="..\..\include\OGL\ImageLoader.h" />
     <ClInclude Include="..\..\include\win32\Win32Window.h" />
   </ItemGroup>
   <ItemGroup>
@@ -103,13 +107,15 @@
     <ClCompile Include="..\..\source\core\IOManager.cpp" />
     <ClCompile Include="..\..\source\core\Object.cpp" />
     <ClCompile Include="..\..\source\core\ResourceManager.cpp" />
+    <ClCompile Include="..\..\source\core\SpriteBatch.cpp" />
+    <ClCompile Include="..\..\source\core\TextureCache.cpp" />
     <ClCompile Include="..\..\source\graphics\GraphicsApplication.cpp" />
     <ClCompile Include="..\..\source\graphics\GraphicsSystem.cpp" />
     <ClCompile Include="..\..\source\graphics\Window.cpp" />
     <ClCompile Include="..\..\source\OGL\OGL.cpp" />
     <ClCompile Include="..\..\source\ogl\OGLGraphicsSystem.cpp" />
     <ClCompile Include="..\..\source\OGL\Shader.cpp" />
-    <ClCompile Include="..\..\source\OGL\Texture2D.cpp" />
+    <ClCompile Include="..\..\source\OGL\ImageLoader.cpp" />
     <ClCompile Include="..\..\source\win32\Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>

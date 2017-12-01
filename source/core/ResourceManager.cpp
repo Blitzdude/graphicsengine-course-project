@@ -1,6 +1,17 @@
-#include "..\..\include\core\ResourceManager.h"
+#include "core/ResourceManager.h"
 
-Texture2D engine::ResourceManager::getTexture(std::string texturePath)
+namespace engine {
+
+TextureCache ResourceManager::m_textureCache;
+
+Texture2D ResourceManager::getTexture(std::string texturePath)
 {
-	return Texture2D();
+	return m_textureCache.getTexture(texturePath);
+}
+
+void ResourceManager::createTexture(std::string texturePath, int width, int height, int bytesPerPixel, void * manager)
+{
+	m_textureCache.createTexture(texturePath, width, height, bytesPerPixel, manager);
+}
+
 }

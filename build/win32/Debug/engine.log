@@ -1,14 +1,2 @@
-﻿  Camera2D.cpp
-c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec2.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
-  c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec2.hpp(206): note: see reference to class template instantiation 'glm::tvec2<T,P>' being compiled
-c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec2.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
-c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec2.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
-c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec3.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
-  c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec3.hpp(227): note: see reference to class template instantiation 'glm::tvec3<T,P>' being compiled
-c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec3.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
-c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec3.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
-c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec4.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
-  c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec4.hpp(272): note: see reference to class template instantiation 'glm::tvec4<T,P>' being compiled
-c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec4.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
-c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec4.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
-  engine.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\engine.lib
+﻿  ImageLoader.cpp
+  engine.vcxproj -> C:\Users\joelkan\Desktop\graphicsengine-course-project\build\win32\Debug\engine.lib

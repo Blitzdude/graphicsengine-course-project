@@ -7,7 +7,10 @@
 #include <EGL/egl.h>
 #include <string>
 
-
+/*
+* Shader class is a single shaderprogram 
+* for use in programming
+*/
 namespace engine {
 
 	class Shader : public Object

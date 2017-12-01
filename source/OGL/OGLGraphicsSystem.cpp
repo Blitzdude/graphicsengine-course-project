@@ -135,62 +135,16 @@ namespace engine
 		eglSwapBuffers(m_eglDisplay, m_eglSurface);
 	}
 
+	void OGLGraphicsSystem::createNewShader(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, void* manager)
+	{
+		m_shaders.emplace_back(new Shader(vertexShaderFilePath, fragmentShaderFilePath, manager));
+	}
+
+	Shader * OGLGraphicsSystem::getShader(int index)
+	{
+		return m_shaders[index];
+	}
+
 	
-	void OGLGraphicsSystem::drawTriangles(	Shader* shader,
-											float vertices[],
-											float textureCoordinates[],
-											int numVertices)
-	{
-		// bind program to be used
-		shader->use();
-
-		// set position of the vertex
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, vertices);
-		glEnableVertexAttribArray(0);
-
-		// Set texture coordinates
-		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, textureCoordinates);
-		glEnableVertexAttribArray(1);
-
-		// draw the vertex array as triangle
-		glDrawArrays(GL_TRIANGLES, 0, numVertices);
-
-		// dont forget to unuse !
-		shader->unUse();
-		glDisableVertexAttribArray(0);
-		glDisableVertexAttribArray(1);
-
-	}
-
-	void OGLGraphicsSystem::drawSprite(Shader * shader, Texture2D * texture, glm::mat4 mvp, float vertices[], float textureCoordinates[], int numVertices)
-	{
-		// Use shader program
-		shader->use();
-
-		GLuint mvpLoc = shader->getUniformLocation("MVP");
-		glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, glm::value_ptr(mvp));
-
-		// Set positions
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, vertices);
-		glEnableVertexAttribArray(0);
-
-		// set texture coordinates
-		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, textureCoordinates);
-		glEnableVertexAttribArray(1);
-
-		// bind texture
-		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, texture->getTextureId());
-
-		// set the sampler texture unit to 0
-		glUniform1i(shader->getUniformLocation("texture"), 0);
-
-		// draw vertex arrays as triangle
-		glDrawArrays(GL_TRIANGLES, 0, numVertices);
-
-		// don't forget to unUse!
-		shader->unUse();
-		glDisableVertexAttribArray(0);
-		glDisableVertexAttribArray(1);
-	}
+	
 }

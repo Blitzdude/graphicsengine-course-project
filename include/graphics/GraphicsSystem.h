@@ -13,7 +13,6 @@
 #include <fstream>
 #include <GLES2/gl2.h>
 #include <OGL/Shader.h>
-#include <OGL/Texture2D.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -35,18 +34,10 @@ namespace engine
 		// Method for swapping backbuffer to screen.
 		virtual void swapBuffers() = 0;
 
-		virtual void drawTriangles(	Shader* shader,
-									float vertices[],
-									float textureCoordinates[],
-									int numVertices) = 0; 
-
-		virtual void drawSprite(	Shader* shader,
-									Texture2D* texture,
-									glm::mat4 mvp,
-									float vertices[],
-									float textureCoordinates[],
-									int numVertices) = 0;
+		virtual void createNewShader(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, void* manager) = 0;
 		
+		virtual virtual Shader* getShader(int index) = 0;
+	
 	};
 
 }

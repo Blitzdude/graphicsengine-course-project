@@ -1,129 +1,129 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:3:1-33:12
-INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:3:1-33:12
-INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:3:1-33:12
-INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:3:1-33:12
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\2f993afa8007c1b2b4eacfd630f6d435\AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support.constraint:constraint-layout:1.0.1] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.1.aar\65f2504666d6d72993762f6ed9ae182c\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\504ff117eca5fb221ba140c6ff80f2c9\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\d39b3bd12e22c8d61775e3744498c9aa\AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:support-v4:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\5acc6e2c07f7cde0d7c2c4bd83fd27b9\AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\47e0a5ff892a8a6ff0580ba61b7d23ab\AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\b54ca582471cb677632a797362fa709b\AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\82aaadb1c2dcbc976d0700bde24a1312\AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\b9462c9c40aa5c28a02df4f4e4178a68\AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:support-compat:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\5e25852d08b11ce71bc685f317c94641\AndroidManifest.xml:17:1-27:12
-INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:3:1-33:12
-INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:3:1-33:12
-INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:3:1-33:12
+ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:3:1-33:12
+INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:3:1-33:12
+INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:3:1-33:12
+INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:3:1-33:12
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\f2a3bf2554cdac8cec2261ebb7e1377c\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.1] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.1.aar\41c33bb319d1d977f35e89c52f1f7c0c\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\86257c24a1c8852bae5242b598fd6dd9\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\0421bcca9cc1d1e000e19cadf0a9a96f\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\61022a72f15cc06bd7c2e62da2afcb60\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\1f8d045d2a5e320300136e3df7f0ae7d\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\96e45c782e996c0f264499dd6b04d823\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\04999fe96c80706dc6501590c54809b1\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\8b05648654ac4bd08a8b7165f01bd1fb\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\6aa92adc294afc0bf1bf9f8895334603\AndroidManifest.xml:17:1-27:12
+INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:3:1-33:12
+INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:3:1-33:12
+INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:3:1-33:12
 	package
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:4:5-32
-		INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:4:5-32
+		INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:6:5-30
-		INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:6:5-30
+		INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:3:11-69
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:3:11-69
 	android:versionCode
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:5:5-28
-		INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:5:5-28
+		INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml
 application
-ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:9:3-31:17
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\2f993afa8007c1b2b4eacfd630f6d435\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\2f993afa8007c1b2b4eacfd630f6d435\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.1] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.1.aar\65f2504666d6d72993762f6ed9ae182c\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.1] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.1.aar\65f2504666d6d72993762f6ed9ae182c\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\504ff117eca5fb221ba140c6ff80f2c9\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\504ff117eca5fb221ba140c6ff80f2c9\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\d39b3bd12e22c8d61775e3744498c9aa\AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\d39b3bd12e22c8d61775e3744498c9aa\AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:support-v4:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\5acc6e2c07f7cde0d7c2c4bd83fd27b9\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-v4:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\5acc6e2c07f7cde0d7c2c4bd83fd27b9\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\47e0a5ff892a8a6ff0580ba61b7d23ab\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\47e0a5ff892a8a6ff0580ba61b7d23ab\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\b54ca582471cb677632a797362fa709b\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\b54ca582471cb677632a797362fa709b\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\82aaadb1c2dcbc976d0700bde24a1312\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\82aaadb1c2dcbc976d0700bde24a1312\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\b9462c9c40aa5c28a02df4f4e4178a68\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\b9462c9c40aa5c28a02df4f4e4178a68\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\5e25852d08b11ce71bc685f317c94641\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\5e25852d08b11ce71bc685f317c94641\AndroidManifest.xml:25:5-20
+ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:9:3-31:17
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\f2a3bf2554cdac8cec2261ebb7e1377c\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\f2a3bf2554cdac8cec2261ebb7e1377c\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.1] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.1.aar\41c33bb319d1d977f35e89c52f1f7c0c\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.1] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.1.aar\41c33bb319d1d977f35e89c52f1f7c0c\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\86257c24a1c8852bae5242b598fd6dd9\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\86257c24a1c8852bae5242b598fd6dd9\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\0421bcca9cc1d1e000e19cadf0a9a96f\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\0421bcca9cc1d1e000e19cadf0a9a96f\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\61022a72f15cc06bd7c2e62da2afcb60\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\61022a72f15cc06bd7c2e62da2afcb60\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\1f8d045d2a5e320300136e3df7f0ae7d\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\1f8d045d2a5e320300136e3df7f0ae7d\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\96e45c782e996c0f264499dd6b04d823\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\96e45c782e996c0f264499dd6b04d823\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\04999fe96c80706dc6501590c54809b1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\04999fe96c80706dc6501590c54809b1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\8b05648654ac4bd08a8b7165f01bd1fb\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\8b05648654ac4bd08a8b7165f01bd1fb\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\6aa92adc294afc0bf1bf9f8895334603\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\6aa92adc294afc0bf1bf9f8895334603\AndroidManifest.xml:25:5-20
 	android:label
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:13:7-39
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:13:7-39
 	android:hasCode
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:14:7-30
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:14:7-30
 	android:fullBackupContent
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:11:7-40
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:11:7-40
 	android:icon
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:12:7-41
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:12:7-41
 	android:allowBackup
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:10:7-34
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:10:7-34
 activity#android.app.NativeActivity
-ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:18:5-30:16
+ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:18:5-30:16
 	android:screenOrientation
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:19:9-46
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:19:9-46
 	android:label
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:21:9-41
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:21:9-41
 	android:configChanges
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:22:9-59
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:22:9-59
 	android:theme
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:20:9-67
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:20:9-67
 	android:name
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:18:15-56
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:18:15-56
 meta-data#android.app.lib_name
-ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:24:7-25:45
+ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:24:7-25:45
 	android:value
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:25:11-42
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:25:11-42
 	android:name
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:24:18-53
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:24:18-53
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:26:7-29:23
+ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:26:7-29:23
 action#android.intent.action.MAIN
-ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:27:9-61
+ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:27:9-61
 	android:name
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:27:17-58
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:27:17-58
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:28:9-69
+ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:28:9-69
 	android:name
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml:28:19-66
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml:28:19-66
 uses-sdk
-INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\2f993afa8007c1b2b4eacfd630f6d435\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\2f993afa8007c1b2b4eacfd630f6d435\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support.constraint:constraint-layout:1.0.1] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.1.aar\65f2504666d6d72993762f6ed9ae182c\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.0.1] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.1.aar\65f2504666d6d72993762f6ed9ae182c\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\504ff117eca5fb221ba140c6ff80f2c9\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\504ff117eca5fb221ba140c6ff80f2c9\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\d39b3bd12e22c8d61775e3744498c9aa\AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\d39b3bd12e22c8d61775e3744498c9aa\AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:support-v4:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\5acc6e2c07f7cde0d7c2c4bd83fd27b9\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\5acc6e2c07f7cde0d7c2c4bd83fd27b9\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\47e0a5ff892a8a6ff0580ba61b7d23ab\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\47e0a5ff892a8a6ff0580ba61b7d23ab\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\b54ca582471cb677632a797362fa709b\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\b54ca582471cb677632a797362fa709b\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\82aaadb1c2dcbc976d0700bde24a1312\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\82aaadb1c2dcbc976d0700bde24a1312\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\b9462c9c40aa5c28a02df4f4e4178a68\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\b9462c9c40aa5c28a02df4f4e4178a68\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\5e25852d08b11ce71bc685f317c94641\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\5e25852d08b11ce71bc685f317c94641\AndroidManifest.xml:21:5-23:58
-INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\f2a3bf2554cdac8cec2261ebb7e1377c\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\f2a3bf2554cdac8cec2261ebb7e1377c\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support.constraint:constraint-layout:1.0.1] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.1.aar\41c33bb319d1d977f35e89c52f1f7c0c\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.1] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.1.aar\41c33bb319d1d977f35e89c52f1f7c0c\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\86257c24a1c8852bae5242b598fd6dd9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\86257c24a1c8852bae5242b598fd6dd9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\0421bcca9cc1d1e000e19cadf0a9a96f\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\0421bcca9cc1d1e000e19cadf0a9a96f\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\61022a72f15cc06bd7c2e62da2afcb60\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\61022a72f15cc06bd7c2e62da2afcb60\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\1f8d045d2a5e320300136e3df7f0ae7d\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\1f8d045d2a5e320300136e3df7f0ae7d\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\96e45c782e996c0f264499dd6b04d823\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\96e45c782e996c0f264499dd6b04d823\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\04999fe96c80706dc6501590c54809b1\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\04999fe96c80706dc6501590c54809b1\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\8b05648654ac4bd08a8b7165f01bd1fb\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\8b05648654ac4bd08a8b7165f01bd1fb\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\6aa92adc294afc0bf1bf9f8895334603\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\6aa92adc294afc0bf1bf9f8895334603\AndroidManifest.xml:21:5-23:58
+INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:25.2.0] C:\Users\JoelKan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\2f993afa8007c1b2b4eacfd630f6d435\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:25.2.0] C:\Users\joelkan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\f2a3bf2554cdac8cec2261ebb7e1377c\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\joelkan\Desktop\graphicsengine-course-project\build\android\app\src\main\AndroidManifest.xml

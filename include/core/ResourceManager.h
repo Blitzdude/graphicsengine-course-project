@@ -1,6 +1,7 @@
 #ifndef _RESOURCE_MANAGER_H_
 #define _RESOURCE_MANAGER_H_
-
+#include <graphics/Texture2D.h>
+#include <core/TextureCache.h>
 #include <string>
 
 namespace engine {
@@ -11,9 +12,9 @@ namespace engine {
 	{
 	public:
 		static Texture2D getTexture(std::string texturePath);
-
+		static void createTexture(std::string texturePath, int width, int height, int bytesPerPixel, void* manager);
 	private:
-		static TextureCache _textureCache;
+		static TextureCache m_textureCache;
 	};
 
 }
