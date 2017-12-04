@@ -72,11 +72,7 @@ private:
 	Object& operator=( const Object& );
 };
 
-
 }
-
-
-
 #endif // OBJECT_H_
 
 

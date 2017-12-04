@@ -93,25 +93,25 @@ namespace engine
 
 		glUniformMatrix4fv(pLocation, 1, GL_FALSE, &(cameraMatrix[0][0]));
 
-		m_spriteBatch->begin();
 
 		glm::vec4 position(xVal, yVal, 50.0f, 50.0f);
 		glm::vec4 uv(0.0f, 0.0f, 1.0f, 1.0f);
 		
-		Texture2D fooTexture = ResourceManager::getTexture("mr_t.png");
+		static Texture2D fooTexture = ResourceManager::getTexture("mr_t.png");
+		m_spriteBatch->begin();
 
 		m_spriteBatch->draw(position, uv, fooTexture.id, 0.0f, ColorRGBA8(255, 255, 255, 255));
+		
 
 		m_spriteBatch->end();
 
 		m_spriteBatch->renderBatch();
 
+
 		shaderProg->unUse();
 		
 		// set OpenGL drawing window display to entire window.
 		glViewport(0, 0, window->getWidth(), window->getHeight());
-
-		
 
 		// switch secondary buffer to be displayed on screen. 
 		graphics->swapBuffers();
@@ -129,5 +129,4 @@ namespace engine
 			LOGI("MouseX: %f MouseY: %f \r", mX, mY);
 		}
 	}
-
 }

@@ -21,18 +21,20 @@ namespace engine {
 		Texture2D texture = {};
 
 		// This is the buffer input we load the file into
+		/*
 		std::string in;
-		
 		// Read the image file with IOManager
 		if (IOManager::readFileToBuffer(filepath, in, manager) == false)
 		{
 			LOGE("Failed to load PNG file to Buffer! %s", filepath.c_str());
 		}
 		LOGI("%s\n", in.c_str());
+		*/
 		
 		// Decode the png using stbi_load_from_memmory
 		int stb_fmt = bytesPerPixel == 3 ? STBI_rgb : STBI_rgb_alpha; // format depending on bit Depth
-		unsigned char* out = stbi_load_from_memory((unsigned char*)in.c_str(), sizeof(in), &width, &height, &bytesPerPixel, stb_fmt);
+		stbi_uc* out = stbi_load(filepath.c_str(), &width, &height, &bytesPerPixel, stb_fmt);
+		//unsigned char* out = stbi_load_from_memory((unsigned char*)in.c_str(), sizeof(in), &width, &height, &bytesPerPixel, stb_fmt);
 
 		// Generate the openGL texture object
 		glGenTextures(1, &(texture.id));

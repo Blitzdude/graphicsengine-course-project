@@ -8,8 +8,11 @@
 #include <stdio.h>
 #include <typeinfo>
 #include <core/Log.h>
+#include <vector>
 
 #define SHOW_LEAKS
+//#define MEMORY_LEAK_DEBUGGING
+//#define ASSERT_ON_LEAKS
 
 namespace engine
 {
@@ -33,7 +36,8 @@ namespace
 #if defined(MEMORY_LEAK_DEBUGGING)
                 for( size_t i=0; i<m_objects.size(); ++i )
                 {
-                    esLogMessage(m_objectNames[i].c_str());
+					LOGI("%s\n", m_objectNames[i].c_str());
+                    //esLogMessage(m_objectNames[i].c_str());
                 }
 #endif
             }
@@ -71,9 +75,9 @@ namespace
 					break;
 				}
 			}
-
 			m_objects.erase( m_objects.begin() + index );
 			m_objectNames.erase( m_objectNames.begin() + index );
+
 #else
 			(void)o;
 #endif
@@ -105,8 +109,6 @@ Object::~Object()
         assert( this->m_numOfRefs == 0 ); // "Can not delete Object, when it have references some where else";
     }
 }
-
-
 
 }
 

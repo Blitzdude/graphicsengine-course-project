@@ -36,10 +36,9 @@ namespace engine
 
 		virtual void createNewShader(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath, void* manager) = 0;
 		
-		virtual virtual Shader* getShader(int index) = 0;
+		virtual Shader* getShader(int index) = 0;
 	
 	};
-
 }
 
 #endif

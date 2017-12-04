@@ -48,7 +48,6 @@ namespace engine
 
 	private:
 		
-
 		float						m_totalTime;
 		void* 						m_assetManager;
 		InputManager*				m_inputManager;
@@ -56,7 +55,6 @@ namespace engine
 		SpriteBatch*				m_spriteBatch;
 
 	};
-
 }
 
 #endif

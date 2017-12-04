@@ -16,6 +16,8 @@ namespace engine {
 #if defined(_WIN32)
     bool IOManager::readFileToBuffer(std::string filePath, std::vector<unsigned char>& buffer, void* manager)
     {
+		(void)manager;
+
         std::ifstream file(filePath, std::ios::binary); // open file
         if (file.fail()) { // error check
 			LOGI("failed to open %s : ", filePath.c_str());
@@ -42,6 +44,8 @@ namespace engine {
 
     bool IOManager::readFileToBuffer(std::string filePath, std::string & buffer, void* manager)
     {
+		(void)manager;
+
         std::ifstream file(filePath, std::ios::binary);
         if (file.fail()) {
             perror(filePath.c_str());
@@ -66,6 +70,8 @@ namespace engine {
     }
 	bool IOManager::readFileToBuffer(std::string filePath, unsigned char * buffer, void * manager)
 	{
+		(void)manager;
+
 		std::ifstream file(filePath, std::ios::binary);
 		if (file.fail()) {
 			perror(filePath.c_str());
