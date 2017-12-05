@@ -39,7 +39,7 @@ namespace engine
 		m_camera = new Camera2D();
 		m_camera->init(getWindow()->getWidth(), getWindow()->getHeight());
 		//create textures
-		ResourceManager::createTexture("mr_t.png", 50, 50, 4, m_assetManager);
+		ResourceManager::createTexture("mr_t.png", 200, 100, 4, m_assetManager);
 		// create Spritebatch and initialize it
 		m_spriteBatch = new SpriteBatch();
 		m_spriteBatch->init();
@@ -60,7 +60,7 @@ namespace engine
 	bool TestApplication::update(float deltaTime)
 	{
 		m_totalTime += deltaTime;
-		processInput(getWindow());
+		//processInput(getWindow());
 
 		m_camera->update();
 		
@@ -70,13 +70,11 @@ namespace engine
 
 	void TestApplication::render(Window* window, GraphicsSystem* graphics)
 	{
-		float xVal, yVal;
-		xVal = m_inputManager->getMouseX();
 		
-		yVal = (m_inputManager->getMouseY()) * -1.0f;
+		glm::vec2 coords = glm::vec2(m_inputManager->getMouseX(), m_inputManager->getMouseY());
+			
+		coords = m_camera->convertScreenToWorld(coords);
 
-
-		
 		(void)window;	
 		
 		float val = fabsf(sinf(2.0f*m_totalTime));
@@ -94,7 +92,7 @@ namespace engine
 		glUniformMatrix4fv(pLocation, 1, GL_FALSE, &(cameraMatrix[0][0]));
 
 
-		glm::vec4 position(xVal, yVal, 50.0f, 50.0f);
+		glm::vec4 position(coords.x, coords.y, 50.0f, 50.0f);
 		glm::vec4 uv(0.0f, 0.0f, 1.0f, 1.0f);
 		
 		static Texture2D fooTexture = ResourceManager::getTexture("mr_t.png");
@@ -120,13 +118,6 @@ namespace engine
 	void TestApplication::processInput(Window* window)
 	{
 		
-		float mX = m_inputManager->getMouseX();
-		float mY = m_inputManager->getMouseY();
-
-		if ((mX < window->getWidth() && mX > 0) &&
-			(mY < window->getHeight() && mY > 0))
-		{
-			LOGI("MouseX: %f MouseY: %f \r", mX, mY);
-		}
+		
 	}
 }

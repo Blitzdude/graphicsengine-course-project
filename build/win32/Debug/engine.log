@@ -1,2 +1,90 @@
-﻿  Object.cpp
-  engine.vcxproj -> C:\Users\Joel\Desktop\graphicsengine-course-project\build\win32\Debug\engine.lib
+﻿  Win32Window.cpp
+c:\users\joelkan\desktop\graphicsengine-course-project\source\win32\win32window.cpp(16): warning C4101: 'hdc': unreferenced local variable
+c:\users\joelkan\desktop\graphicsengine-course-project\source\win32\win32window.cpp(19): warning C4101: 'ptWindowLR': unreferenced local variable
+c:\users\joelkan\desktop\graphicsengine-course-project\source\win32\win32window.cpp(18): warning C4101: 'ptWindowUL': unreferenced local variable
+c:\users\joelkan\desktop\graphicsengine-course-project\source\win32\win32window.cpp(17): warning C4101: 'windowRect': unreferenced local variable
+  ImageLoader.cpp
+c:\users\joelkan\desktop\graphicsengine-course-project\source\ogl\imageloader.cpp(18): warning C4100: 'manager': unreferenced formal parameter
+  Shader.cpp
+  OGLGraphicsSystem.cpp
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(206): note: see reference to class template instantiation 'glm::tvec2<T,P>' being compiled
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(227): note: see reference to class template instantiation 'glm::tvec3<T,P>' being compiled
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(272): note: see reference to class template instantiation 'glm::tvec4<T,P>' being compiled
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\gtc\quaternion.hpp(56): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\gtc\quaternion.hpp(132): note: see reference to class template instantiation 'glm::tquat<T,P>' being compiled
+  OGL.cpp
+  Window.cpp
+  GraphicsSystem.cpp
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(206): note: see reference to class template instantiation 'glm::tvec2<T,P>' being compiled
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(227): note: see reference to class template instantiation 'glm::tvec3<T,P>' being compiled
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(272): note: see reference to class template instantiation 'glm::tvec4<T,P>' being compiled
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\gtc\quaternion.hpp(56): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\gtc\quaternion.hpp(132): note: see reference to class template instantiation 'glm::tquat<T,P>' being compiled
+  GraphicsApplication.cpp
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(206): note: see reference to class template instantiation 'glm::tvec2<T,P>' being compiled
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(227): note: see reference to class template instantiation 'glm::tvec3<T,P>' being compiled
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(272): note: see reference to class template instantiation 'glm::tvec4<T,P>' being compiled
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\gtc\quaternion.hpp(56): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\gtc\quaternion.hpp(132): note: see reference to class template instantiation 'glm::tquat<T,P>' being compiled
+  TextureCache.cpp
+  SpriteBatch.cpp
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(206): note: see reference to class template instantiation 'glm::tvec2<T,P>' being compiled
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(227): note: see reference to class template instantiation 'glm::tvec3<T,P>' being compiled
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(272): note: see reference to class template instantiation 'glm::tvec4<T,P>' being compiled
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+  ResourceManager.cpp
+  Object.cpp
+  IOManager.cpp
+  InputManager.cpp
+  ElapsedTimer.cpp
+  Camera2D.cpp
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(206): note: see reference to class template instantiation 'glm::tvec2<T,P>' being compiled
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec2.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(227): note: see reference to class template instantiation 'glm::tvec3<T,P>' being compiled
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec3.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(272): note: see reference to class template instantiation 'glm::tvec4<T,P>' being compiled
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\graphicsengine-course-project\include\glm\detail\type_vec4.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+  AndroidWindow.cpp
+  Generating Code...
+  engine.vcxproj -> C:\Users\JoelKan\Desktop\graphicsengine-course-project\build\win32\Debug\engine.lib
